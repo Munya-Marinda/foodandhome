@@ -1,0 +1,46 @@
+{
+  "errors": [],
+  "warnings": [],
+  "hash": "73ac085bf9366a7042ee",
+  "publicPath": "",
+  "outputPath": "C:\\repos\\foodandhome\\build\\static",
+  "assetsByChunkName": {
+    "foodandhome": "foodandhome.module.js"
+  },
+  "assets": [
+    {
+      "name": "foodandhome.module.js",
+      "size": 31314866,
+      "chunks": [
+        "foodandhome"
+      ],
+      "chunkNames": [
+        "foodandhome"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "namedChunkGroups": {
+    "foodandhome": {
+      "chunks": [
+        "foodandhome"
+      ],
+      "assets": [
+        "foodandhome.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "foodandhome",
+      "files": [
+        "foodandhome.module.js"
+      ]
+    }
+  ]
+}

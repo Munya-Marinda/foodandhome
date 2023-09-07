@@ -10,14 +10,14 @@ const settings = {
   },
   packages: [
     {
-      name: "capetownetc-theme-1",
+      name: "foodandhome1",
     },
     {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "https://staging.foodandhome.com",
-          api: "https://staging.foodandhome.com/wp-json",
+          url: "https://staging.foodandhome.co.za",
+          api: "https://staging.foodandhome.co.za/wp-json",
         },
       },
     },
