@@ -35,7 +35,7 @@ const Header = ({
     useState(false);
 
   const maxCarouselItems = 4;
-  const postsSet1_categoryID = 3;
+  const postsSet1_categoryID = 1005;
   const [postsSet1, setPostsSet1] = useState(null);
   const [postsChuncksSet1, setPostsChuncksSet1] = useState(null);
   const [menuChildren, setmenuChildren] = useState(null);
@@ -222,7 +222,7 @@ const Header = ({
         <Modal.Header closeButton>
           <Modal.Title>
             <h4 className="submitYourContent_modal_header_1">
-              Submit Your Content
+              SUBMIT YOUR RECIPE
             </h4>
           </Modal.Title>
         </Modal.Header>
@@ -242,30 +242,6 @@ const Header = ({
 
       <div className="ad_horizontal_parent_1">
         <div className="ad_horizontal_1">[AD]</div>
-      </div>
-
-      <div className="topbar_parent_1">
-        <div className="topbar_container_1">
-          <div className="topbar_date_weather_parent_1">
-            <div className="topbar_date_parent_1">
-              <span>Monday, July 24th, 2023</span>
-            </div>
-            <div className="topbar_weather_parent_1">
-              <span>
-                <FaCloud /> 18°
-              </span>
-            </div>
-          </div>
-          <div className="topbar_socialLinks_submit_parent_1">
-            <SocialMediaIcons />
-            <button
-              onClick={handleSubmitYourContentShow}
-              className="submitYourContent_parent_1"
-            >
-              SUBMIT YOUR CONTENT
-            </button>
-          </div>
-        </div>
       </div>
 
       {/* MOBILE */}
@@ -422,10 +398,25 @@ const Header = ({
             <Link link="/">
               <img
                 className="nav_logo_img_1"
-                src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/cape-logo-big-1.png"
+                src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/logo-1.png"
               />
             </Link>
           </div>
+          <div className="topbar_socialLinks_submit_parent_1">
+            <SocialMediaIcons />
+            <button
+              onClick={handleSubmitYourContentShow}
+              className="submitYourContent_parent_1"
+            >
+              SUBMIT YOUR RECIPE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* DESKTOP */}
+      <div className="nav_parent_2">
+        <div className="nav_container_1">
           <div className="nav_wide_links_parent_1">
             {menuObject !== null ? (
               <>
@@ -485,8 +476,8 @@ const Header = ({
               </div>
             )}
           </div>
-          <div className="nav_search_container_1">
-            <FaSearch className="youtube_icon_1" />
+          <div className="nav_search_parent_1">
+            <input type="search" placeholder="Search for 'stir'" />
           </div>
         </div>
       </div>
@@ -564,7 +555,9 @@ const Header = ({
           </div>
         </div>
       </Switch>
-      {/* CAROUSEL DESKTOP */}
+
+      {/* CAROUSEL DESKTOP */} 
+
       <Switch>
         <div
           when={data.route !== "/vouchers/" && !formOpen}

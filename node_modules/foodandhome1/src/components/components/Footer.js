@@ -210,7 +210,7 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
               Maitland, 7405, Western Cape | Telephone: (021) 530 3300 | Fax:
               (021) 530 3333
             </div>
-            <div id="footer-copyright">© Copyright 2023 Cape Town ETC</div>
+            <div id="footer-copyright">© Copyright 2023 Food & Home</div>
           </div>
         </div>
       </div>

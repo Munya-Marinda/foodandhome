@@ -1309,14 +1309,73 @@ const fetchMenu = () => {
     }
   }
 
+  // return {
+  //   _20074_: data[20074],
+  //   _212963_: data[212963],
+  //   _11_: data[11],
+  //   _212964_: data[212964],
+  //   _107472_: data[107472],
+  //   _212990_: data[212990],
+  //   _212997_: data[212997],
+  // };
+
   return {
-    _20074_: data[20074],
-    _212963_: data[212963],
-    _11_: data[11],
-    _212964_: data[212964],
-    _107472_: data[107472],
-    _212990_: data[212990],
-    _212997_: data[212997],
+    _0_: {
+      id: "0",
+      title: "Home",
+      url: "/",
+      type: "category",
+      children: [],
+    },
+    _1_: {
+      id: "1",
+      title: "Recipes",
+      url: "/recipes/",
+      type: "category",
+      children: [],
+    },
+    _2_: {
+      id: "2",
+      title: "How To",
+      url: "",
+      type: "category",
+      children: [],
+    },
+    _3_: {
+      id: "3",
+      title: "News & Trends",
+      url: "",
+      type: "category",
+      children: [],
+    },
+    _4_: {
+      id: "4",
+      title: "Foodie Deals",
+      url: "",
+      type: "category",
+      children: [],
+    },
+    _5_: {
+      id: "5",
+      title: "Videos",
+      url: "",
+      type: "category",
+      children: [],
+    },
+    _6_: {
+      id: "6",
+      title: "Win",
+      url: "",
+      type: "category",
+      children: [],
+    },
+    _7_: {
+      id: "7",
+      title: "Advertise",
+      url: "",
+      type: "category",
+      children: [],
+    },
   };
 };
 //

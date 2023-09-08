@@ -3,7 +3,7 @@
   --maxContentWidth: 945px;
   /* COLORS */
   /* --pinkish_color: #911c12ff; */
-  --pinkish_color: #ef4050ff;
+  --pinkish_color: #84ff00;
   --peach_1: #fff6e7;
   --gray_1: rgb(246, 246, 246);
   --blue_1: rgb(0, 160, 247);
@@ -207,7 +207,7 @@ body {
   padding: 4px 5px 1px 5px;
   border-radius: 100px;
   margin-right: 10px;
-  color: white;
+  color: black;
   font-size: 11px;
 }
 
@@ -224,34 +224,35 @@ body {
 }
 
 .instagram_icon_parent_1 {
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .facebook_icon_parent_1 {
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .twitter_icon_parent_1 {
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .tiktok_icon_parent_1 {
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .youtube_icon_parent_1 {
-  background-color: black !important;
+  background-color: white !important;
 }
 
 .submitYourContent_parent_1 {
   border: 0px;
-  color: white;
+  color: black;
   font-size: 9px;
-  font-weight: 500;
-  padding: 10px;
+  font-weight: bold;
+  padding: 18px 10px;
   margin-left: 15px;
   text-decoration: none;
-  background-color: var(--pinkish_color);
+  /* background-color: var(--pinkish_color); */
+  background-color: #84ff00;
 }
 
 .submitYourContent_parent_1:hover {
@@ -292,25 +293,32 @@ WIDE NAV
   background-color: black;
 }
 
+.nav_parent_2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background-color: white;
+}
+
 .nav_container_1 {
   width: 100%;
   display: flex;
-  align-items: flex-end;
   flex-direction: row;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   max-width: var(--maxContentWidth);
 }
 
 .nav_logo_img_1 {
-  width: 260px;
+  width: 220px;
 }
 
 .nav_wide_links_span_1 {
-  color: white;
+  color: black;
   font-size: 12px;
-  /* font-weight: bold; */
-  font-weight: 500;
-  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .nav_wide_placeholder_parent_1 {
@@ -335,7 +343,7 @@ WIDE NAV
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .nav_wide_links_parent_1 > a {
@@ -347,7 +355,7 @@ WIDE NAV
 }
 
 .nav_wide_links_container_1 {
-  padding: 40px 0px 15px 0px;
+  padding: 20px 0px;
   margin-right: 15px;
   position: relative;
   display: flex;
@@ -362,7 +370,7 @@ WIDE NAV
   width: 100%;
   bottom: 0px;
   position: absolute;
-  background-color: #ffffff;
+  background-color: var(--pinkish_color);
 }
 
 .nav_search_container_1 {
@@ -374,6 +382,13 @@ WIDE NAV
 
 .nav_search_container_1 > svg {
   color: white;
+}
+
+.nav_search_parent_1 > input {
+  width: 220px;
+  padding: 1px 10px;
+  font-size: 14px;
+  box-shadow: 3px 3px 1px var(--pinkish_color);
 }
 
 /* 
@@ -641,7 +656,7 @@ CATEGORY | DATE
 .category_date_span_category_1,
 .category_date_span_divider_1,
 .category_date_span_date_1 {
-  color: var(--pinkish_color);
+  color: gray;
   font-size: 10px;
   white-space: nowrap;
 }
@@ -1253,8 +1268,7 @@ DADDYS DEALS IFRAME
 FULL WIDTH POST
 */
 .full_width_post_parent_1 {
-  background-image: url("https://images.unsplash.com/photo-1563656157432-67560011e209?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80");
-  /* background-image: url("https://ambassador.daddysdeals.co.za/features/capetownetc-assets/photo-1563656157432-67560011e209.avif"); */
+  background-image: url("https://ambassador.daddysdeals.co.za/features/foodandhome-assets/salad-1.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2759,6 +2773,7 @@ Media queries
   }
 
   .nav_parent_1,
+  .nav_parent_2,
   .topbar_parent_1,
   .footer_container_1,
   /*
