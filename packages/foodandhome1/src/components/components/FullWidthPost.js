@@ -16,9 +16,9 @@ const FullWidthPost = ({ title, link }) => {
             <CategoryDateText textColor={"white"} />
           </div>
         </div>
-        {/* <Link link="#playVideo">
+        <Link link="#playVideo">
           <div className="playVideo_parent_1"><FaPlayCircle /></div>
-        </Link> */}
+        </Link>
       </div>
     </div>
   )

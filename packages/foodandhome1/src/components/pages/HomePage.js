@@ -9,6 +9,8 @@ import FullWidthPost from "../components/FullWidthPost";
 import FullScreenCategories from "../components/FullScreenCategories";
 import { CustomWPRestServicePostObject, filterAndSortPosts } from "../js/main";
 import { Placeholder } from "react-bootstrap";
+import CategoryDateText_2 from "../components/CategoryDateText_2";
+import FullScreenCTA from "../components/FullScreenCTA";
 
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
@@ -233,11 +235,15 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
   return (
     <main className="homepage_main_parent_1">
-      <FullWidthPost title={"Carrot falafel with lemon yogurt"} link={"#"} />
-  
+      <FullWidthPost
+        title={
+          "Carrot falafel with lemon yogurt Carrot falafel with lemon yogurt"
+        }
+        link={"#"}
+      />
 
       <div className="post_block_1_parent_1 content_spacing_top_2 content_spacing_bottom_2">
-      <div className="ad_vertical_1_parent">
+        <div className="ad_vertical_1_parent">
           <div
             className="ad_vertical_1"
             id="ad_vertical_1_id_1"
@@ -259,17 +265,18 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
               <div className="post_block_2_header_parent_1">
                 <span className="post_block_2_header_1">Restaurants</span>
                 <div className="post_block_2_headerLinks_parent_1">
-                  <Link link="/restaurants/" className="post_block_2_headerLink_1">
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link link="/restaurants/" className="post_block_2_headerLink_1">
-                    <span> THE LATEST </span>
+                  <Link
+                    link="/restaurants/"
+                    className="post_block_2_headerLink_1"
+                  >
+                    <span className="magazine_topNews_icon_2">
+                      <FaGreaterThan />
+                    </span>
                   </Link>
                 </div>
               </div>
 
-              <div className="post_block_2_posts_container_1">
+              <div className="post_block_2_posts_container_1 content_spacing_bottom_2">
                 {postsSet2 !== null ? (
                   <>
                     {postsSet2 !== false ? (
@@ -304,10 +311,6 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                                           }
                                         />
                                       </Link>
-                                      <CategoryDateText
-                                        dateText={customPost.date}
-                                        textColor={"white"}
-                                      />
                                     </div>
                                   </div>
                                   <img
@@ -356,6 +359,11 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 )}
               </div>
 
+              <div className="ad_horizontal_2_parent">
+                <h6 className="ad_text_1">ADVERTISEMENT</h6>
+                <div className="ad_horizontal_2"></div>
+              </div>
+
               <div className="post_block_2_posts_container_2 content_spacing_top_2">
                 {postsSet2 !== null ? (
                   <>
@@ -363,7 +371,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                       <>
                         {postsSet2.length !== 0 ? (
                           <>
-                            {postsSet2.slice(2, 7).map((post, index) => {
+                            {postsSet2.slice(2, 5).map((post, index) => {
                               const customPost = CustomWPRestServicePostObject(
                                 WP_SiteUrl,
                                 post,
@@ -427,7 +435,214 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   </>
                 ) : (
                   <>
-                    {["", "", "", "", ""].map((m, n) => (
+                    {["", "", ""].map((m, n) => (
+                      <div className="placeholder_child_4_parent" key={n}>
+                        <Placeholder animation="glow">
+                          <Placeholder
+                            xs={2}
+                            bg="dark"
+                            className="placeholder_child_4"
+                          />
+                        </Placeholder>
+                        <Placeholder
+                          animation="glow"
+                          className="width100 placeholder_child_4_parent_2"
+                        >
+                          <Placeholder
+                            xs={4}
+                            bg="dark"
+                            className="placeholder_child_4_1"
+                          />
+                          <br />
+                          <Placeholder xs={2} bg="dark" />
+                          <br />
+                          <Placeholder xs={9} bg="dark" />
+                          <br />
+                          <Placeholder xs={8} bg="dark" />
+                          <br />
+                        </Placeholder>
+                      </div>
+                    ))}
+                  </>
+                )}
+              </div>
+
+              <div className="post_block_2_header_parent_1 content_spacing_top_2">
+                <span className="post_block_2_header_1">
+                  Events & Festivals
+                </span>
+                <div className="post_block_2_headerLinks_parent_1">
+                  <Link
+                    link="/events-and-festivals/"
+                    className="post_block_2_headerLink_1"
+                  >
+                    <span className="magazine_topNews_icon_2">
+                      <FaGreaterThan />
+                    </span>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="post_block_2_posts_container_1 content_spacing_bottom_2">
+                {postsSet2 !== null ? (
+                  <>
+                    {postsSet2 !== false ? (
+                      <>
+                        {postsSet2.length !== 0 ? (
+                          <>
+                            {postsSet2.slice(0, 2).map((post, index) => {
+                              const customPost = CustomWPRestServicePostObject(
+                                WP_SiteUrl,
+                                post,
+                                postsSet2_categoryID
+                              );
+                              //
+                              //
+                              //
+                              //
+                              //
+                              return (
+                                <div
+                                  key={index}
+                                  className={
+                                    "post_block_2_postImg_container_1 min_height_200px" +
+                                    (index === 1 ? " hide_on_mobile" : "")
+                                  }
+                                >
+                                  <div className="post_block_2_postImg_container_1_darkOverlay postImageTextOverlay_2">
+                                    <div>
+                                      <Link link={customPost.slug}>
+                                        <h1
+                                          dangerouslySetInnerHTML={
+                                            customPost.title
+                                          }
+                                        />
+                                      </Link>
+                                    </div>
+                                  </div>
+                                  <img
+                                    src={customPost.imgUrl}
+                                    alt=""
+                                    className="post_block_2_featureImg_1 "
+                                  />
+                                  <ArticleIcons
+                                    commentsLink={customPost.commentsSlug}
+                                    cameraLink={customPost.slug}
+                                    categoryText={customPost.categoryText}
+                                    categoryLink={"/news/"}
+                                  />
+                                </div>
+                              );
+                            })}
+                          </>
+                        ) : (
+                          <div className="spinner_parent_1">
+                            <h1>NO NEW POSTS FOUND</h1>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="spinner_parent_1">
+                        <h1>FAILED TO FETCH POSTS</h1>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Placeholder
+                    animation="glow"
+                    className="placeholder_child_3_parent"
+                  >
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                    />
+                  </Placeholder>
+                )}
+              </div>
+
+              <div className="ad_horizontal_2_parent">
+                <h6 className="ad_text_1">ADVERTISEMENT</h6>
+                <div className="ad_horizontal_2"></div>
+              </div>
+
+              <div className="post_block_2_posts_container_2 content_spacing_top_2">
+                {postsSet2 !== null ? (
+                  <>
+                    {postsSet2 !== false ? (
+                      <>
+                        {postsSet2.length !== 0 ? (
+                          <>
+                            {postsSet2.slice(2, 5).map((post, index) => {
+                              const customPost = CustomWPRestServicePostObject(
+                                WP_SiteUrl,
+                                post,
+                                postsSet2_categoryID
+                              );
+                              //
+                              //
+                              //
+                              //
+                              //
+                              return (
+                                <div
+                                  className="post_block_2_post_container_1"
+                                  key={index}
+                                >
+                                  <div className="post_block_2_postImg_container_1">
+                                    <img
+                                      alt=""
+                                      src={customPost.imgUrl}
+                                      className="post_block_2_postImg_2"
+                                    />
+                                    <ArticleIcons
+                                      commentsLink={customPost.commentsSlug}
+                                      cameraLink={customPost.slug}
+                                    />
+                                  </div>
+                                  <div className="post_block_2_postText_1">
+                                    <Link link={customPost.slug}>
+                                      <h1
+                                        dangerouslySetInnerHTML={
+                                          customPost.title
+                                        }
+                                      />
+                                    </Link>
+                                    <CategoryDateText
+                                      dateText={customPost.date}
+                                      categoryText={customPost.categoryText}
+                                    />
+                                    <div
+                                      className="post_block_2_postText_content_parent_1"
+                                      dangerouslySetInnerHTML={
+                                        customPost.excerpt
+                                      }
+                                    />
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </>
+                        ) : (
+                          <div className="spinner_parent_1">
+                            <h1>NO NEW POSTS FOUND</h1>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="spinner_parent_1">
+                        <h1>FAILED TO FETCH POSTS</h1>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {["", "", ""].map((m, n) => (
                       <div className="placeholder_child_4_parent" key={n}>
                         <Placeholder animation="glow">
                           <Placeholder
@@ -461,157 +676,109 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
             </div>
 
             <div className="post_block_2_right_bar_parent_1">
-              <div className="magazine_preview_parent_1">
-                <img
-                  className="magazine_preview_img_1"
-                  src="https://www.hmshop.co.za/wp-content/uploads/2023/04/cape-etc.jpg"
-                  alt="Latest CapeETC cover"
-                />
-                <div className="magazine_preview_btn_parent_1">
-                  <div className="magazine_preview_btn_subscribe_1">
-                    <Link link="#subscribe-today">
-                      <span>Subscribe Today</span>
-                    </Link>
-                  </div>
-                  <div className="magazine_preview_btn_get_copy_parent_1">
-                    <Link link="#print-magazine">
-                      <span>print</span>
-                    </Link>
-                    <Link link="#digital-magazine">
-                      <span>digital</span>
-                    </Link>
-                  </div>
-                </div>
+              <div className="ad_square_1">
+                <p>[AD]</p>
               </div>
-
               <div className="magazine_topNews_parent_1">
-                <Link link="/news/">
+                <Link link="#top-news">
                   <div className="magazine_topNews_header_1">
                     <span className="magazine_topNews_headerText_1">
-                      Top News
+                     Heading 1
                     </span>
                     <span className="magazine_topNews_icon_1">
                       <FaGreaterThan />
                     </span>
                   </div>
                 </Link>
-                {postsSet5 !== null ? (
-                  <>
-                    {postsSet5 !== false ? (
-                      <>
-                        {postsSet5.length !== 0 ? (
-                          <>
-                            {postsSet5.slice(0, 5)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet5_categoryID
-                              );
-                              //
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  className="magazine_topNews_container_1"
-                                  key={index}
-                                >
-                                  <Link link={customPost.slug}>
-                                    <h6
-                                      dangerouslySetInnerHTML={customPost.title}
-                                    />
-                                  </Link>
-                                  <CategoryDateText
-                                    categoryText={"NEWS"}
-                                    dateText={customPost.date}
-                                  />
-                                </div>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="post_block_3_posts_container_1">
-                    {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                      <div
-                        className="placeholder_child_7_parent_parent"
-                        key={n}
-                      >
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_7_parent"
-                        >
-                          <Placeholder
-                            xs={7}
-                            bg="dark"
-                            className="placeholder_child_7_1"
-                          />
-                          <Placeholder
-                            xs={4}
-                            bg="dark"
-                            className="placeholder_child_7_1"
-                          />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
 
-              <div className="ad_square_1">
-                {ad_1 !== null ? (
-                  <>
-                    {ad_1 !== false ? (
-                      <>
-                        {ad_1.length !== 0 ? (
-                          <>
-                            <h6>[AD]</h6>
-                            {/* <div
-                              dangerouslySetInnerHTML={{
-                                __html: ad_1.html_code,
-                              }}
+                <div className="topGuides_parent_1">
+                  {postsSet4 !== null ? (
+                    <>
+                      {postsSet4 !== false ? (
+                        <>
+                          {postsSet4.length !== 0 ? (
+                            <>
+                              {postsSet4.slice(0, 3)?.map((post, index) => {
+                                const customPost =
+                                  CustomWPRestServicePostObject(
+                                    WP_SiteUrl,
+                                    post,
+                                    postsSet4_categoryID
+                                  );
+                                //
+                                //
+                                //
+                                //
+                                //
+                                return (
+                                  <div
+                                    className="topGuides_container_1"
+                                    key={index}
+                                  >
+                                    <div className="topGuides_postImg_1">
+                                      <img
+                                        alt=""
+                                        src={customPost.imgUrl}
+                                        className="post_block_3_postImg_2"
+                                      />
+                                    </div>
+                                    <div className="topGuides_textContainer_1">
+                                      <Link link={customPost.slug}>
+                                        <h6
+                                          dangerouslySetInnerHTML={
+                                            customPost.title
+                                          }
+                                        />
+                                      </Link>
+                                      <CategoryDateText_2
+                                        categoryText={customPost.categoryText}
+                                        dateText={customPost.date}
+                                      />
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </>
+                          ) : (
+                            <div className="spinner_parent_1">
+                              <h1>NO NEW POSTS FOUND</h1>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="spinner_parent_1">
+                          <h1>FAILED TO FETCH POSTS</h1>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="topGuides_parent_1">
+                      {["", "", ""].map((m, n) => (
+                        <div
+                          className="placeholder_child_8_parent_parent"
+                          key={n}
+                        >
+                          <Placeholder animation="glow" className="">
+                            <Placeholder className="placeholder_child_8_1" />
+                          </Placeholder>
+                          <Placeholder animation="glow" className="">
+                            <Placeholder
+                              xs={10}
+                              className="placeholder_child_8_2"
                             />
-                            <div
-                              dangerouslySetInnerHTML={{
-                                __html: ad_1.script_code,
-                              }}
-                            /> */}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h6>[AD]</h6>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h6>[AD]</h6>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="placeholder_child_4_parent">
-                    <Placeholder animation="glow">
-                      <Placeholder
-                        xs={2}
-                        bg="dark"
-                        className="placeholder_ad_square_1"
-                      />
-                    </Placeholder>
-                  </div>
-                )}
+                            <Placeholder
+                              xs={5}
+                              className="placeholder_child_8_2"
+                            />
+                          </Placeholder>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              <div className="ad_rectangle_1">
+                <p>[AD]</p>
               </div>
             </div>
           </div>
@@ -634,12 +801,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
         </div>
       </div>
 
-      <DaddysDealsIFrame />
-
-      <FullWidthPost
-        title={"The 20 Best Places To Travel to in South Africa"}
-        link={"#the-20-best-places-to-travel-to-in-south-africa"}
-      />
+      <FullScreenCTA />
 
       <div className="post_block_1_parent_2 content_spacing_top_2">
         <div className="ad_vertical_1_parent"></div>

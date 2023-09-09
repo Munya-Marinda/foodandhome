@@ -21,9 +21,6 @@ const SocialMediaIcons = ({ state }) => {
       <Link link="#twitter" className="twitter_icon_parent_1">
         <FaTwitter />
       </Link>
-      <Link link="#tiktok" className="tiktok_icon_parent_1">
-        <FaTiktok />
-      </Link>
       <Link link="#youtube" className="youtube_icon_parent_1">
         <FaYoutube />
       </Link>
