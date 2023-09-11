@@ -359,7 +359,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 )}
               </div>
 
-              <div className="ad_horizontal_2_parent">
+              <div className="ad_horizontal_2_parent content_spacing_top_2">
                 <h6 className="ad_text_1">ADVERTISEMENT</h6>
                 <div className="ad_horizontal_2"></div>
               </div>
@@ -566,7 +566,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 )}
               </div>
 
-              <div className="ad_horizontal_2_parent">
+              <div className="ad_horizontal_2_parent content_spacing_top_2">
                 <h6 className="ad_text_1">ADVERTISEMENT</h6>
                 <div className="ad_horizontal_2"></div>
               </div>
@@ -683,7 +683,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 <Link link="#top-news">
                   <div className="magazine_topNews_header_1">
                     <span className="magazine_topNews_headerText_1">
-                     Heading 1
+                      Heading 1
                     </span>
                     <span className="magazine_topNews_icon_1">
                       <FaGreaterThan />
@@ -723,6 +723,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                                       />
                                     </div>
                                     <div className="topGuides_textContainer_1">
+                                      <CategoryDateText_2
+                                        categoryText={customPost.categoryText}
+                                        dateText={customPost.date}
+                                      />
                                       <Link link={customPost.slug}>
                                         <h6
                                           dangerouslySetInnerHTML={
@@ -730,10 +734,6 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                                           }
                                         />
                                       </Link>
-                                      <CategoryDateText_2
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      />
                                     </div>
                                   </div>
                                 );
@@ -809,130 +809,31 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_1">
               <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Things To Do</span>
+                <span className="post_block_2_header_1">Markets</span>
                 <div className="post_block_2_headerLinks_parent_1">
                   <Link
-                    link="/things-to-do/"
+                    link="/events-and-festivals/"
                     className="post_block_2_headerLink_1"
                   >
-                    <span> SEE ALL </span>
-                  </Link>
-                  <span className="post_block_2_headerLink_spacer_1"> | </span>
-                  <Link
-                    link="/things-to-do/"
-                    className="post_block_2_headerLink_1"
-                  >
-                    <span> THE LATEST </span>
+                    <span className="magazine_topNews_icon_2">
+                      <FaGreaterThan />
+                    </span>
                   </Link>
                 </div>
               </div>
 
-              <div className="post_block_2_posts_container_1">
-                {postsSet3 !== null ? (
+              <div className="post_block_3_posts_container_2 content_spacing_top_3">
+                {postsSet2 !== null ? (
                   <>
-                    {postsSet3 !== false ? (
+                    {postsSet2 !== false ? (
                       <>
-                        {postsSet3.length !== 0 ? (
+                        {postsSet2.length !== 0 ? (
                           <>
-                            {postsSet3.slice(0, 1)?.map((post, index) => {
+                            {postsSet2.slice(0, 4).map((post, index) => {
                               const customPost = CustomWPRestServicePostObject(
                                 WP_SiteUrl,
                                 post,
-                                postsSet3_categoryID,
-                                null,
-                                120
-                              );
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <>
-                                  <div
-                                    key={index}
-                                    className="post_block_2_postImg_container_1 min_height_200px"
-                                  >
-                                    <img
-                                      src={customPost.imgUrl}
-                                      alt=""
-                                      className="post_block_2_featureImg_1"
-                                    />
-                                    <ArticleIcons />
-                                  </div>
-                                  <div className="post_block_3_featuredPostText_parent_1">
-                                    <Link link={customPost.slug}>
-                                      <h1
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </Link>
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
-                                    <div
-                                      dangerouslySetInnerHTML={
-                                        customPost.excerpt
-                                      }
-                                    />
-                                  </div>
-                                </>
-                              );
-                            })}
-                          </>
-                        ) : (
-                          <div className="spinner_parent_1">
-                            <h1>NO NEW POSTS FOUND</h1>
-                          </div>
-                        )}
-                      </>
-                    ) : (
-                      <div className="spinner_parent_1">
-                        <h1>FAILED TO FETCH POSTS</h1>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="placeholder_child_5_parent_div">
-                    <Placeholder
-                      animation="glow"
-                      className="placeholder_child_5_parent"
-                    >
-                      <Placeholder
-                        xs={2}
-                        bg="dark"
-                        className="placeholder_child_5"
-                      />
-                    </Placeholder>
-                    <Placeholder animation="glow" className="width100">
-                      <Placeholder
-                        bg="dark"
-                        className="placeholder_child_5_1"
-                      />
-                      <br />
-                      <Placeholder xs={4} bg="dark" className="" />
-                      <br />
-                      <Placeholder xs={8} bg="dark" className="" />
-                      <br />
-                      <Placeholder xs={8} bg="dark" className="" />
-                    </Placeholder>
-                  </div>
-                )}
-              </div>
-
-              <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                {postsSet3 !== null ? (
-                  <>
-                    {postsSet3 !== false ? (
-                      <>
-                        {postsSet3.length !== 0 ? (
-                          <>
-                            {postsSet3.slice(1, 10)?.map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet3_categoryID
+                                postsSet2_categoryID
                               );
                               //
                               //
@@ -941,22 +842,28 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                               //
                               return (
                                 <div
-                                  className="post_block_3_post_container_1"
                                   key={index}
+                                  className="post_block_4_postImg_2_container_1"
                                 >
                                   <div className="post_block_3_postImg_container_1">
                                     <img
-                                      className="post_block_3_postImg_1"
-                                      src={customPost.imgUrl}
                                       alt=""
+                                      src={customPost.imgUrl}
+                                      className="post_block_4_postImg_2"
                                     />
-                                    <ArticleIcons showCategory={false} />
                                   </div>
                                   <div className="post_block_3_postText_1">
-                                    <CategoryDateText
-                                      categoryText={customPost.categoryText}
-                                      dateText={customPost.date}
-                                    />
+                                    <div
+                                      style={{
+                                        width: "100%",
+                                        margin: "5px 0px",
+                                      }}
+                                    >
+                                      <CategoryDateText
+                                        categoryText={customPost.categoryText}
+                                        dateText={customPost.date}
+                                      />
+                                    </div>
                                     <Link link={customPost.slug}>
                                       <h1
                                         dangerouslySetInnerHTML={
@@ -982,23 +889,46 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                     )}
                   </>
                 ) : (
-                  <div className="post_block_3_posts_container_1 content_spacing_top_2">
-                    {["", "", "", "", "", "", "", "", ""].map((m, n) => (
-                      <div className="post_block_3_post_container_1" key={n}>
-                        <Placeholder
-                          animation="glow"
-                          className="placeholder_child_6_parent"
-                        >
-                          <Placeholder className="placeholder_child_6_1" />
-                          <br />
-                          <Placeholder xs={4} bg="dark" className="" />
-                          <br />
-                          <Placeholder xs={8} bg="dark" className="" />
-                        </Placeholder>
-                      </div>
-                    ))}
-                  </div>
+                  <Placeholder
+                    animation="glow"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexWrap: "wrap",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                  </Placeholder>
                 )}
+              </div>
+
+              <div className="ad_horizontal_2_parent content_spacing_top_2">
+                <h6 className="ad_text_1">ADVERTISEMENT</h6>
+                <div className="ad_horizontal_2"></div>
               </div>
             </div>
 
@@ -1010,7 +940,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 <Link link="#top-news">
                   <div className="magazine_topNews_header_1">
                     <span className="magazine_topNews_headerText_1">
-                      Top Guides
+                      Heading 1
                     </span>
                     <span className="magazine_topNews_icon_1">
                       <FaGreaterThan />
@@ -1050,6 +980,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                                       />
                                     </div>
                                     <div className="topGuides_textContainer_1">
+                                      <CategoryDateText_2
+                                        categoryText={customPost.categoryText}
+                                        dateText={customPost.date}
+                                      />
                                       <Link link={customPost.slug}>
                                         <h6
                                           dangerouslySetInnerHTML={
@@ -1057,10 +991,6 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                                           }
                                         />
                                       </Link>
-                                      <CategoryDateText
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      />
                                     </div>
                                   </div>
                                 );

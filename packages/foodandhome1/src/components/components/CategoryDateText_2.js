@@ -6,8 +6,13 @@ const CategoryDateText_2 = ({
   textColor,
   categoryText,
 }) => {
+  //
+  //
+  //
+  //
+  //
   return (
-    <div>
+    <div className="category_date_category_parent_1">
       {categoryText === undefined ? (
         <></>
       ) : (
@@ -17,12 +22,6 @@ const CategoryDateText_2 = ({
             style={{ color: textColor !== "" ? textColor : "initial" }}
           >
             <b>{categoryText !== undefined && categoryText.toUpperCase()}</b>
-          </span>
-          <span
-            className="category_date_span_divider_1"
-            style={{ color: textColor !== "" ? textColor : "initial" }}
-          >
-            <b>|</b>
           </span>
         </>
       )}

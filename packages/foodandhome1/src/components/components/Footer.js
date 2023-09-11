@@ -4,6 +4,7 @@ import Link from "@frontity/components/link";
 import SocialMediaIcons from "./SocialMediaIcons";
 import { FixInvalidLink } from "../js/main";
 import Modal from "react-bootstrap/Modal";
+import SocialMediaIcons_color from "./SocialMediaIcons_color";
 
 const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
   const [menuObject, setMenuObject] = useState(null);
@@ -104,20 +105,22 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
         <div className="footer_container_1">
           <div className="footer_subToday_container_1">
             <span>Subscribe Today</span>
-            <div className="subscribe_to_newsletter">
-              <input name="subscribe_to_newsletter" type="checkbox" />
-              <label>Newsletter</label>
-            </div>
-            <div className="subscribe_to_promomailer">
-              <input name="subscribe_to_promomailer" type="checkbox" />
-              <label>Promotional Mailer</label>
+            <div className="subscribe_to_newsletter_checkbox_parent">
+              <div className="subscribe_to_newsletter">
+                <input name="subscribe_to_newsletter" type="checkbox" />
+                <label>Newsletter</label>
+              </div>
+              <div className="subscribe_to_promomailer">
+                <input name="subscribe_to_promomailer" type="checkbox" />
+                <label>Promotional Mailer</label>
+              </div>
             </div>
             <div className="footer_enterEmail_container_2">
               <input type="text" placeholder="Your Email" />
               <button onClick={handleSubmitYourContentShow}>Subscribe</button>
             </div>
           </div>
-          <SocialMediaIcons />
+          <SocialMediaIcons_color />
         </div>
         <div className="footer_container_2">
           <div className="footer_container_2_1">
