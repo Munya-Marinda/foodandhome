@@ -129,13 +129,13 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
                 <>
                   {menuObject !== false ? (
                     <>
-                      {menuObject.length !== 0 ? (
+                      {Object.keys(menuObject).length !== 0 ? (
                         <>
                           {Object.keys(menuObject).map((key, index) => {
                             const menuParent = menuObject[key];
                             const title = menuParent.title;
                             const menuChildren = menuParent.children;
-                            if (menuChildren.length === 0) return;
+                            // if (menuChildren.length === 0) return;
                             let url = FixInvalidLink(menuParent.url);
                             //
                             //
@@ -196,7 +196,7 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
                   )}
                 </>
               ) : (
-                <div className="nav_wide_placeholder_parent_1"></div>
+                <></>
               )}
             </div>
             <div className="footer_habari_parent_1">

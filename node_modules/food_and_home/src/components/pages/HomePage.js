@@ -11,6 +11,7 @@ import { CustomWPRestServicePostObject, filterAndSortPosts } from "../js/main";
 import { Placeholder } from "react-bootstrap";
 import CategoryDateText_2 from "../components/CategoryDateText_2";
 import FullScreenCTA from "../components/FullScreenCTA";
+import CookbooksCarousel from "../components/CookbooksCarousel";
 
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
@@ -51,7 +52,6 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
             postsSet1_categoryID +
             "&per_page=100&orderby=date&order=desc&_embed"
         );
-        console.log("response", response);
         if (!response.ok) {
           setPostsSet1(false);
           return;
@@ -1039,6 +1039,8 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
         </div>
         <div className="ad_vertical_1_parent"></div>
       </div>
+
+      <CookbooksCarousel WP_SiteUrl={WP_SiteUrl} />
     </main>
   );
 };

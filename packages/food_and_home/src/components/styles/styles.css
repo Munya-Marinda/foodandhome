@@ -2449,6 +2449,71 @@ SUBSCRIBE TO MAILER
 //
 //
 //
+COOK BOOKS
+*/
+
+.cook_books_parent_1 {
+  width: 100%;
+  display: flex;
+  color: black;
+  padding: 20px 10xp;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f8f4eeff;
+}
+
+/*
+COOK BOOKS - CAROUSEL
+*/
+.cook_books_header_parent_1,
+.cook_books_preview_parent_1 {
+  width: var(--maxContentWidth);
+}
+
+.cook_books_header_parent_1 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cook_books_header_1_container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.cook_books_header_parent_1 > div {
+  width: fit-content;
+}
+
+.cookbook_carousel_item_parent_1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cookbook_carousel_item_container_1,
+.cookbook_carousel_item_container_1 * {
+  width: 100%;
+  max-width: calc(var(--maxContentWidth) / 4.3);
+}
+
+.cookbook_carousel_image_1 {
+  width: 400px;
+}
+
+/* 
+//
+//
+//
+//
+//
+//
 PLACEHOLDER
 */
 .placeholder_parent_1 {
