@@ -10,7 +10,7 @@ const settings = {
   },
   packages: [
     {
-      name: "foodandhome1",
+      name: "food_and_home",
     },
     {
       name: "@frontity/wp-source",

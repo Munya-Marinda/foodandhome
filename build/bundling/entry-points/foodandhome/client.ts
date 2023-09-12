@@ -1,11 +1,11 @@
 import client from "@frontity/core/src/client";
-import foodandhome1_default from "foodandhome1/src/index";
+import food_and_home_default from "food_and_home/src/index";
 import frontity__wp_source_default from "@frontity/wp-source/src/index";
 import frontity__tiny_router_default from "@frontity/tiny-router/src/index";
 import frontity__html2react_default from "@frontity/html2react/src/index";
 
 const packages = {
-  foodandhome1_default,
+  food_and_home_default,
   frontity__wp_source_default,
   frontity__tiny_router_default,
   frontity__html2react_default,
@@ -17,19 +17,19 @@ if (module["hot"]) {
   module["hot"].accept(
     [
       "@frontity/core/src/client",
-      "foodandhome1/src/index",
+      "food_and_home/src/index",
       "@frontity/wp-source/src/index",
       "@frontity/tiny-router/src/index",
       "@frontity/html2react/src/index",
     ],
     () => {
       const client = require("@frontity/core/src/client").default;
-      const foodandhome1_default = require("foodandhome1/src/index").default;
+      const food_and_home_default = require("food_and_home/src/index").default;
       const frontity__wp_source_default = require("@frontity/wp-source/src/index").default;
       const frontity__tiny_router_default = require("@frontity/tiny-router/src/index").default;
       const frontity__html2react_default = require("@frontity/html2react/src/index").default;
       const packages = {
-        foodandhome1_default,
+        food_and_home_default,
         frontity__wp_source_default,
         frontity__tiny_router_default,
         frontity__html2react_default,
