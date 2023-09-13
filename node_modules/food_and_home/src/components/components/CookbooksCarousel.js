@@ -112,11 +112,20 @@ const CookbooksCarousel = ({ WP_SiteUrl }) => {
                                   className="cookbook_carousel_item_container_1"
                                 >
                                   <Link link={customPost_slug}>
-                                    <img
-                                      alt="Image"
-                                      className="cookbook_carousel_image_1"
-                                      src={customPost.imgUrl}
-                                    />
+                                    <div
+                                      className="cookbook_carousel_image_div_1"
+                                      style={{
+                                        backgroundImage:
+                                          "url('" + customPost.imgUrl + "')",
+                                      }}
+                                    >
+                                      <img
+                                        alt="Image"
+                                        className="cookbook_carousel_image_1"
+                                        src={customPost.imgUrl}
+                                      />
+                                      <div className="cookbook_carousel_image_div_1_overlay" />
+                                    </div>
                                     <div
                                       key={index2}
                                       className="cookbook_carousel_text_parent_1"

@@ -62,9 +62,9 @@ a {
 body {
   margin: 0px;
   padding: 0px;
+  color: black;
   font-weight: 300;
   font-family: "Roboto", sans-serif;
-  color: black;
   background-color: white !important;
 }
 
@@ -1617,6 +1617,36 @@ FULL WIDTH POST
   width: var(--post_block_4_postImg_2_width);
 }
 
+/* 
+//
+//
+//
+//
+//
+//
+POST BLOCK 5 (START)
+//
+*/
+.post_block_5_posts_container_1 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/* 
+//
+//
+//
+//
+//
+//
+POST BLOCK 5 (END)
+//
+*/
+
 .topGuides_textContainer_1 {
   padding-left: 12px;
 }
@@ -2456,7 +2486,7 @@ COOK BOOKS
   width: 100%;
   display: flex;
   color: black;
-  padding: 20px 10xp;
+  padding: 30px 10px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -2474,6 +2504,7 @@ COOK BOOKS - CAROUSEL
 .cook_books_header_parent_1 {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
   flex-direction: column;
   justify-content: center;
 }
@@ -2483,28 +2514,66 @@ COOK BOOKS - CAROUSEL
   align-items: center;
   flex-direction: row;
   justify-content: center;
+  font-family: "Hina Mincho", serif;
 }
 
 .cook_books_header_parent_1 > div {
   width: fit-content;
 }
 
+.cook_books_header_1 {
+  font-weight: bold;
+  font-size: 4.5rem;
+}
+
+.cook_books_header_2 {
+  font-size: 2.7rem;
+  font-family: "Parisienne", cursive;
+}
+
 .cookbook_carousel_item_parent_1 {
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .cookbook_carousel_item_container_1,
 .cookbook_carousel_item_container_1 * {
   width: 100%;
+  color: black;
   max-width: calc(var(--maxContentWidth) / 4.3);
 }
 
 .cookbook_carousel_image_1 {
-  width: 400px;
+  z-index: 1;
+  width: 100%;
+  max-height: 285px;
+}
+
+.cookbook_carousel_image_div_1,
+.cookbook_carousel_image_div_1_overlay {
+  width: 220px;
+  height: 285px;
+}
+
+.cookbook_carousel_image_div_1_overlay {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.54);
+}
+
+.cookbook_carousel_image_div_1 {
+  position: relative;
+  margin-bottom: 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /*  */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* 

@@ -1041,6 +1041,244 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
       </div>
 
       <CookbooksCarousel WP_SiteUrl={WP_SiteUrl} />
+
+      <div className="post_block_1_parent_2 content_spacing_top_1 content_spacing_bottom_1">
+        <div className="ad_vertical_1_parent"></div>
+        <div className="post_block_1_parent_2">
+          <div className="post_block_1_container_1">
+            <div className="post_block_2_header_container_1">
+              <div className="post_block_2_header_parent_1">
+                <span className="post_block_2_header_1">Profiles</span>
+                <div className="post_block_2_headerLinks_parent_1">
+                  <Link
+                    link="/events-and-festivals/"
+                    className="post_block_2_headerLink_1"
+                  >
+                    <span className="magazine_topNews_icon_2">
+                      <FaGreaterThan />
+                    </span>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="post_block_3_posts_container_2 content_spacing_top_3">
+                {postsSet2 !== null ? (
+                  <>
+                    {postsSet2 !== false ? (
+                      <>
+                        {postsSet2.length !== 0 ? (
+                          <>
+                            {postsSet2.slice(0, 4).map((post, index) => {
+                              const customPost = CustomWPRestServicePostObject(
+                                WP_SiteUrl,
+                                post,
+                                postsSet2_categoryID
+                              );
+                              //
+                              //
+                              //
+                              //
+                              //
+                              return (
+                                <></>
+                                // <div
+                                //   key={index}
+                                //   className="post_block_4_postImg_2_container_1"
+                                // >
+                                //   <div className="post_block_3_postImg_container_1">
+                                //     <img
+                                //       alt=""
+                                //       src={customPost.imgUrl}
+                                //       className="post_block_4_postImg_2"
+                                //     />
+                                //   </div>
+                                //   <div className="post_block_3_postText_1">
+                                //     <div
+                                //       style={{
+                                //         width: "100%",
+                                //         margin: "5px 0px",
+                                //       }}
+                                //     >
+                                //       <CategoryDateText
+                                //         categoryText={customPost.categoryText}
+                                //         dateText={customPost.date}
+                                //       />
+                                //     </div>
+                                //     <Link link={customPost.slug}>
+                                //       <h1
+                                //         dangerouslySetInnerHTML={
+                                //           customPost.title
+                                //         }
+                                //       />
+                                //     </Link>
+                                //   </div>
+                                // </div>
+                              );
+                            })}
+                          </>
+                        ) : (
+                          <div className="spinner_parent_1">
+                            <h1>NO NEW POSTS FOUND</h1>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <div className="spinner_parent_1">
+                        <h1>FAILED TO FETCH POSTS</h1>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Placeholder
+                    animation="glow"
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      flexWrap: "wrap",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                    <Placeholder
+                      xs={2}
+                      bg="dark"
+                      className="placeholder_child_3"
+                      style={{ marginBottom: "10px" }}
+                    />
+                  </Placeholder>
+                )}
+              </div>
+
+              <div className="ad_horizontal_2_parent content_spacing_top_2">
+                <h6 className="ad_text_1">ADVERTISEMENT</h6>
+                <div className="ad_horizontal_2"></div>
+              </div>
+            </div>
+
+            <div className="post_block_2_right_bar_parent_1">
+              <div className="ad_square_1">
+                <p>[AD]</p>
+              </div>
+              <div className="magazine_topNews_parent_1">
+                <Link link="#top-news">
+                  <div className="magazine_topNews_header_1">
+                    <span className="magazine_topNews_headerText_1">
+                      Heading 1
+                    </span>
+                    <span className="magazine_topNews_icon_1">
+                      <FaGreaterThan />
+                    </span>
+                  </div>
+                </Link>
+
+                <div className="topGuides_parent_1">
+                  {postsSet4 !== null ? (
+                    <>
+                      {postsSet4 !== false ? (
+                        <>
+                          {postsSet4.length !== 0 ? (
+                            <>
+                              {postsSet4.slice(0, 5)?.map((post, index) => {
+                                const customPost =
+                                  CustomWPRestServicePostObject(
+                                    WP_SiteUrl,
+                                    post,
+                                    postsSet4_categoryID
+                                  );
+                                //
+                                //
+                                //
+                                //
+                                //
+                                return (
+                                  <div
+                                    className="topGuides_container_1"
+                                    key={index}
+                                  >
+                                    <div className="topGuides_postImg_1">
+                                      <img
+                                        alt=""
+                                        src={customPost.imgUrl}
+                                        className="post_block_3_postImg_2"
+                                      />
+                                    </div>
+                                    <div className="topGuides_textContainer_1">
+                                      <CategoryDateText_2
+                                        categoryText={customPost.categoryText}
+                                        dateText={customPost.date}
+                                      />
+                                      <Link link={customPost.slug}>
+                                        <h6
+                                          dangerouslySetInnerHTML={
+                                            customPost.title
+                                          }
+                                        />
+                                      </Link>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </>
+                          ) : (
+                            <div className="spinner_parent_1">
+                              <h1>NO NEW POSTS FOUND</h1>
+                            </div>
+                          )}
+                        </>
+                      ) : (
+                        <div className="spinner_parent_1">
+                          <h1>FAILED TO FETCH POSTS</h1>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div className="topGuides_parent_1">
+                      {["", "", "", "", ""].map((m, n) => (
+                        <div
+                          className="placeholder_child_8_parent_parent"
+                          key={n}
+                        >
+                          <Placeholder animation="glow" className="">
+                            <Placeholder className="placeholder_child_8_1" />
+                          </Placeholder>
+                          <Placeholder animation="glow" className="">
+                            <Placeholder
+                              xs={10}
+                              className="placeholder_child_8_2"
+                            />
+                            <Placeholder
+                              xs={5}
+                              className="placeholder_child_8_2"
+                            />
+                          </Placeholder>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="ad_vertical_1_parent"></div>
+      </div>
     </main>
   );
 };

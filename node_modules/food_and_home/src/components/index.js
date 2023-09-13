@@ -72,16 +72,27 @@ const Root = ({ state }) => {
   return (
     <>
       <HelmetProvider>
+        {/* FONTS */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        {/* FONT DEFINITIONS START*/}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Hina+Mincho&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap"
+          rel="stylesheet"
+        ></link>
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap"
           rel="stylesheet"
         />
+        {/* FONT DEFINITIONS END */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5932430900384978"
