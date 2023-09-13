@@ -6,6 +6,7 @@ const settings = {
       title: "Food &amp; Home Magazine",
       description:
         "Find the best recipes for any occasion at Food &amp; Home. Find quick and easy recipes, gourmet feast, and more. Get the scoop on the latest foodie news.",
+      port: 3001, // Add this line
     },
   },
   packages: [
