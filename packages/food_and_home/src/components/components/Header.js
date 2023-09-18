@@ -4,23 +4,14 @@ import { connect } from "frontity";
 import SocialMediaIcons from "./SocialMediaIcons";
 import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
-import { FaBars, FaCloud, FaSearch } from "react-icons/fa";
-import { Carousel, Placeholder } from "react-bootstrap";
+import { FaBars } from "react-icons/fa";
+import { Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject, FixInvalidLink } from "../js/main";
-import CategoryDateText from "./CategoryDateText";
 import Accordion from "react-bootstrap/Accordion";
 import Modal from "react-bootstrap/Modal";
 import SocialMediaIcons_sm from "./SocialMediaIcons_sm";
 import SubmitYourContentForm from "./SubmitYourContentForm";
 import fetchMenu from "../handlers/handleMenu";
-
-const CustomPrevButton = ({ onClick }) => {
-  return <div onClick={onClick} className="header_prev_button" />;
-};
-
-const CustomNextButton = ({ onClick }) => {
-  return <div onClick={onClick} className="header_next_button" />;
-};
 
 const Header = ({
   menu,
@@ -34,10 +25,6 @@ const Header = ({
   const [toggleSubmitYourContentModal, setToggledleSubmitYourContentModal] =
     useState(false);
 
-  const maxCarouselItems = 4;
-  const postsSet1_categoryID = 1005;
-  const [postsSet1, setPostsSet1] = useState(null);
-  const [postsChuncksSet1, setPostsChuncksSet1] = useState(null);
   const [menuChildren, setmenuChildren] = useState(null);
   const [menuParentTitle, setmenuParentTitle] = useState(null);
   const [menuParentUrl, setmenuParentUrl] = useState(null);
@@ -73,40 +60,6 @@ const Header = ({
       updateNavBar(!menu || menu === undefined || menu === null ? [] : menu);
     }
   }, [menu]);
-
-  useEffect(() => {
-    //
-    //
-    const fetch1Posts = async () => {
-      try {
-        const url =
-          WP_SiteUrl +
-          "/wp-json/wp/v2/posts?categories=" +
-          postsSet1_categoryID +
-          "&per_page=100&orderby=date&order=desc&_embed";
-        const response = await fetch(url);
-        if (!response.ok) {
-          setPostsSet1(false);
-          return;
-        }
-        const postsData = await response.json();
-
-        // Create an array to hold the chunks of posts
-        const chunkSize = 4;
-        const postChunks = [];
-        for (let i = 0; i < postsData.length; i += chunkSize) {
-          postChunks.push(postsData.slice(i, i + chunkSize));
-        }
-        setPostsChuncksSet1(postChunks);
-        setPostsSet1(postsData);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-        setPostsSet1(false);
-      }
-    };
-    fetch1Posts();
-    //
-  }, []);
 
   const updateNavBar = (menu) => {
     const newRouteParent = data.route.split("/")[1];
@@ -552,118 +505,6 @@ const Header = ({
                 </div>
               )}
             </div>
-          </div>
-        </div>
-      </Switch>
-
-      {/* CAROUSEL DESKTOP */}
-
-      <Switch>
-        <div
-          when={data.route !== "/vouchers/" && !formOpen}
-          className="header_carousel_header_parent_1"
-          id="header_carousel_header_parent_1_id"
-          style={
-            isSticky
-              ? {
-                  position: "fixed",
-                  top: "0",
-                }
-              : {}
-          }
-        >
-          <div className="header_carousel_header_parent_2">
-            {postsSet1 !== null ? (
-              <>
-                {postsSet1 !== false ? (
-                  <>
-                    {postsSet1.length !== 0 ? (
-                      <Carousel
-                        interval={null}
-                        indicators={false}
-                        prevIcon={<CustomPrevButton />}
-                        nextIcon={<CustomNextButton />}
-                      >
-                        {postsChuncksSet1
-                          .slice(0, maxCarouselItems)
-                          .map((postChunk, index1) => (
-                            <Carousel.Item key={index1} className="">
-                              <div className="header_carousel_item_parent_1">
-                                {postChunk.map((post, index2) => {
-                                  const customPost =
-                                    CustomWPRestServicePostObject(
-                                      WP_SiteUrl,
-                                      post,
-                                      postsSet1_categoryID
-                                    );
-                                  const customPost_slug = FixInvalidLink(
-                                    customPost.slug
-                                  );
-                                  //
-                                  //
-                                  //
-                                  //
-                                  return (
-                                    <div
-                                      key={index2}
-                                      className="header_carousel_item_container_1"
-                                    >
-                                      <img
-                                        alt="Image"
-                                        className="header_carousel_image_1"
-                                        src={customPost.imgUrl}
-                                      />
-                                      <div
-                                        key={index2}
-                                        className="header_carousel_text_parent_1"
-                                      >
-                                        <CategoryDateText
-                                          dateText={customPost.date}
-                                          categoryText={customPost.categoryText}
-                                        />
-                                        <div className="header_carousel_parent_1">
-                                          <Link
-                                            link={customPost_slug}
-                                            className="header_carousel_header_1"
-                                          >
-                                            <h6
-                                              dangerouslySetInnerHTML={
-                                                customPost.title
-                                              }
-                                            />
-                                          </Link>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  );
-                                })}
-                              </div>
-                            </Carousel.Item>
-                          ))}
-                      </Carousel>
-                    ) : (
-                      <div className="spinner_parent_0">
-                        <></>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <div className="spinner_parent_0">
-                    <></>
-                  </div>
-                )}
-              </>
-            ) : (
-              <div className="nav_wide_placeholder_parent_1">
-                <Placeholder animation="glow">
-                  <Placeholder xs={2} bg="light" />
-                  <Placeholder xs={2} bg="light" />
-                  <Placeholder xs={2} bg="light" />
-                  <Placeholder xs={2} bg="light" />
-                  <Placeholder xs={2} bg="light" />
-                </Placeholder>
-              </div>
-            )}
           </div>
         </div>
       </Switch>

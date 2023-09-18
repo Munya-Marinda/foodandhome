@@ -801,7 +801,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
         </div>
       </div>
 
-      <FullScreenCTA />
+      {/* <FullScreenCTA /> */}
 
       <div className="post_block_1_parent_2 content_spacing_top_2 content_spacing_bottom_1">
         <div className="ad_vertical_1_parent"></div>
