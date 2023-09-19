@@ -172,27 +172,27 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
     //
     //
     // AD SERVER
-    const fetchAd_1 = async () => {
-      try {
-        const url =
-          "http://localhost/local-capetownetc/wp-json/frontend/v1/serve-ad/" +
-          ad_1_ID;
-        const response = await fetch(url);
+    // const fetchAd_1 = async () => {
+    //   try {
+    //     const url =
+    //       "http://localhost/local-capetownetc/wp-json/frontend/v1/serve-ad/" +
+    //       ad_1_ID;
+    //     const response = await fetch(url);
 
-        if (!response.ok) {
-          setAd_1(false);
-          return;
-        }
+    //     if (!response.ok) {
+    //       setAd_1(false);
+    //       return;
+    //     }
 
-        const adData = await response.json();
-        // console.log(adData);
-        setAd_1(adData);
-      } catch (error) {
-        console.error("Error fetching ad 1:", error);
-        setAd_1(false);
-      }
-    };
-    fetchAd_1();
+    //     const adData = await response.json();
+    //     // console.log(adData);
+    //     setAd_1(adData);
+    //   } catch (error) {
+    //     console.error("Error fetching ad 1:", error);
+    //     setAd_1(false);
+    //   }
+    // };
+    // fetchAd_1();
     //
     //
     const setAdPositionsFunc = () => {
@@ -1061,7 +1061,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 </div>
               </div>
 
-              <div className="post_block_3_posts_container_2 content_spacing_top_3">
+              {/* <div className="post_block_3_posts_container_2 content_spacing_top_3">
                 {postsSet2 !== null ? (
                   <>
                     {postsSet2 !== false ? (
@@ -1079,40 +1079,39 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                               //
                               //
                               //
-                              return (
-                                <></>
-                                // <div
-                                //   key={index}
-                                //   className="post_block_4_postImg_2_container_1"
-                                // >
-                                //   <div className="post_block_3_postImg_container_1">
-                                //     <img
-                                //       alt=""
-                                //       src={customPost.imgUrl}
-                                //       className="post_block_4_postImg_2"
-                                //     />
-                                //   </div>
-                                //   <div className="post_block_3_postText_1">
-                                //     <div
-                                //       style={{
-                                //         width: "100%",
-                                //         margin: "5px 0px",
-                                //       }}
-                                //     >
-                                //       <CategoryDateText
-                                //         categoryText={customPost.categoryText}
-                                //         dateText={customPost.date}
-                                //       />
-                                //     </div>
-                                //     <Link link={customPost.slug}>
-                                //       <h1
-                                //         dangerouslySetInnerHTML={
-                                //           customPost.title
-                                //         }
-                                //       />
-                                //     </Link>
-                                //   </div>
-                                // </div>
+                              return ( 
+                                <div
+                                  key={index}
+                                  className="post_block_4_postImg_2_container_1"
+                                >
+                                  <div className="post_block_3_postImg_container_1">
+                                    <img
+                                      alt=""
+                                      src={customPost.imgUrl}
+                                      className="post_block_4_postImg_2"
+                                    />
+                                  </div>
+                                  <div className="post_block_3_postText_1">
+                                    <div
+                                      style={{
+                                        width: "100%",
+                                        margin: "5px 0px",
+                                      }}
+                                    >
+                                      <CategoryDateText
+                                        categoryText={customPost.categoryText}
+                                        dateText={customPost.date}
+                                      />
+                                    </div>
+                                    <Link link={customPost.slug}>
+                                      <h1
+                                        dangerouslySetInnerHTML={
+                                          customPost.title
+                                        }
+                                      />
+                                    </Link>
+                                  </div>
+                                </div>
                               );
                             })}
                           </>
@@ -1164,7 +1163,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                     />
                   </Placeholder>
                 )}
-              </div>
+              </div> */}
 
               <div className="ad_horizontal_2_parent content_spacing_top_2">
                 <h6 className="ad_text_1">ADVERTISEMENT</h6>
