@@ -69,9 +69,15 @@ const Top20SAWinesCarousel = ({ WP_SiteUrl, _postsSet1 }) => {
     <div className="cook_books_parent_1 content_spacing_top_2">
       <div className="cook_books_header_parent_1">
         <div className="cook_books_header_1_container">
-          <span className="cook_books_header_art_1">{">>>>"}</span>
+          <img
+            src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/leaf-left.png"
+            className="cook_books_header_art_1"
+          />
           <h1 className="cook_books_header_1">Top 20 SA Wines</h1>
-          <span className="cook_books_header_art_1">{"<<<<"}</span>
+          <img
+            src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/leaf-right-0.png"
+            className="cook_books_header_art_1"
+          />
         </div>
         <div className="cook_books_header_2_container">
           <h3 className="cook_books_header_2">and what to pair them with</h3>
