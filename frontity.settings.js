@@ -2,16 +2,14 @@ const settings = {
   name: "foodandhome",
   state: {
     frontity: {
-      url: "",
-      title: "Food &amp; Home Magazine",
-      description:
-        "Find the best recipes for any occasion at Food &amp; Home. Find quick and easy recipes, gourmet feast, and more. Get the scoop on the latest foodie news.",
-      port: 3001, // Add this line
+      url: "https://test.frontity.org",
+      title: "Test Frontity Blog",
+      description: "WordPress installation for Frontity development",
     },
   },
   packages: [
     {
-      name: "food_and_home",
+      name: "food_and_home_1",
     },
     {
       name: "@frontity/wp-source",

@@ -1,0 +1,13 @@
+{
+  "name": "food_and_home_1",
+  "version": "1.0.0",
+  "description": "Frontity package created using the Frontity CLI.",
+  "keywords": [
+    "frontity",
+    "frontity-food_and_home_1"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "frontity": "^1.17.2"
+  }
+}

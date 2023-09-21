@@ -22,8 +22,7 @@
     "@frontity/mars-theme": "./packages/mars-theme",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/wp-source": "^1.11.7",
-    "bootstrap": "^5.3.1",
-    "food_and_home": "file:packages/food_and_home",
+    "food_and_home_1": "file:packages/food_and_home_1",
     "frontity": "^1.17.2",
     "react-bootstrap": "^2.8.0",
     "react-icons": "^4.11.0"
