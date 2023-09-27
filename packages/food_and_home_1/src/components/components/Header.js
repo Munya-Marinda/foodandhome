@@ -4,7 +4,7 @@ import { connect } from "frontity";
 import SocialMediaIcons from "./SocialMediaIcons";
 import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
-import { FaBars, FaCloud, FaSearch } from "react-icons/fa";
+import { FaAngleDown, FaAngleLeft, FaAngleRight, FaBars } from "react-icons/fa";
 import { Carousel, Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject, FixInvalidLink } from "../js/main";
 import CategoryDateText from "./CategoryDateText";
@@ -15,11 +15,19 @@ import SubmitYourContentForm from "./SubmitYourContentForm";
 import fetchMenu from "../handlers/handleMenu";
 
 const CustomPrevButton = ({ onClick }) => {
-  return <div onClick={onClick} className="header_prev_button" />;
+  return (
+    <div onClick={onClick} className="header_prev_button">
+      <FaAngleLeft size={20} />
+    </div>
+  );
 };
 
 const CustomNextButton = ({ onClick }) => {
-  return <div onClick={onClick} className="header_next_button" />;
+  return (
+    <div onClick={onClick} className="header_next_button">
+      <FaAngleRight size={20} />
+    </div>
+  );
 };
 
 const Header = ({
@@ -384,11 +392,10 @@ const Header = ({
                           const title = menuParent.title;
                           let url = FixInvalidLink(menuParent.url);
                           const isActiveParentLink = menuParentTitle === title;
-                          //
-                          //
+                          const children = menuParent.children;
                           //
                           return (
-                            <Link
+                            <span
                               key={index}
                               link={url}
                               onClick={() => {
@@ -397,13 +404,39 @@ const Header = ({
                             >
                               <div className="nav_wide_links_container_1">
                                 <span className="nav_wide_links_span_1">
-                                  {title}
+                                  {children.length === 0 ? (
+                                    <Link
+                                      key={index}
+                                      link={url}
+                                      onClick={() => {
+                                        updateNavBar(null);
+                                      }}
+                                    >
+                                      {title}
+                                    </Link>
+                                  ) : (
+                                    <span>
+                                      {title} <FaAngleDown size={10} />
+                                    </span>
+                                  )}
+                                  {children.length !== 0 && (
+                                    <div className="nav_wide_links_dropdown_container_1">
+                                      {children.map((child, index) => {
+                                        //
+                                        return (
+                                          <Link key={index} link={child.url}>
+                                            {child.title}
+                                          </Link>
+                                        );
+                                      })}
+                                    </div>
+                                  )}
                                 </span>
                                 {isActiveParentLink && (
                                   <div className="nav_wide_links_active_1"></div>
                                 )}
                               </div>
-                            </Link>
+                            </span>
                           );
                         })}
                       </>
@@ -436,73 +469,6 @@ const Header = ({
           </div>
         </div>
       </div>
-
-      {/* DESKTOP */}
-      <Switch>
-        <div when={data.route !== "/"} className="wide_dropdown_nav_parent_1">
-          <div className="wide_dropdown_nav_container_1">
-            <div className="wide_dropdown_nav_header_1">{menuParentTitle}</div>
-            <div className="wide_dropdown_links_parent_1">
-              {menuChildren !== null ? (
-                <>
-                  {menuChildren !== false ? (
-                    <>
-                      {menuChildren.length !== 0 ? (
-                        <>
-                          {(menuParentTitle !== "Advertise" ||
-                            menuParentTitle !== "Contact") && (
-                            <Link link={menuParentUrl}>
-                              <div className="wide_dropdown_links_container_1">
-                                <span className="wide_dropdown_links_span_1">
-                                  Trending
-                                </span>
-                                {menuParentUrl === data.route && (
-                                  <div className="nav_wide_links_active_1"></div>
-                                )}
-                              </div>
-                            </Link>
-                          )}
-                          {menuChildren.map((child, index) => {
-                            const child_url = FixInvalidLink(child.url);
-                            //
-                            //
-                            return (
-                              <Link key={index} link={child_url}>
-                                <div className="wide_dropdown_links_container_1">
-                                  <span className="wide_dropdown_links_span_1">
-                                    {child.title}
-                                  </span>
-                                  {child_url === data.route && (
-                                    <div className="nav_wide_links_active_1"></div>
-                                  )}
-                                </div>
-                              </Link>
-                            );
-                          })}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_0"></div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_0"></div>
-                  )}
-                </>
-              ) : (
-                <div className="nav_wide_placeholder_parent_1">
-                  <Placeholder animation="glow">
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                    <Placeholder xs={2} bg="light" />
-                  </Placeholder>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      </Switch>
 
       {/* CAROUSEL DESKTOP */}
       <Switch>

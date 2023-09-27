@@ -38,75 +38,75 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
           </div>
           <SocialMediaIcons_color />
         </div>
-        <div class="footer_container_2">
-          <div class="footer_container_2_1">
-            <div class="footer_container_2_1_links_parent">
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">Reciepts</h1>
-                <ul class="footer_ul_1">
+        <div className="footer_container_2">
+          <div className="footer_container_2_1">
+            <div className="footer_container_2_1_links_parent">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">Reciepts</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">How To</h1>
-                <ul class="footer_ul_1">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">How To</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">News & Trending</h1>
-                <ul class="footer_ul_1">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">News & Trending</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">Foodie Deals</h1>
-                <ul class="footer_ul_1">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">Foodie Deals</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">Videos</h1>
-                <ul class="footer_ul_1">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">Videos</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">Win</h1>
-                <ul class="footer_ul_1">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">Win</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
-              <div class="footer_container_2_1_1">
-                <h1 class="footer_header_1">Advertise</h1>
-                <ul class="footer_ul_1">
+              <div className="footer_container_2_1_1">
+                <h1 className="footer_header_1">Advertise</h1>
+                <ul className="footer_ul_1">
                   <li>
                     <a href="/reciepts/" target="_self"></a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div class="footer_habari_parent_1">
-              <h1 class="footer_habari_poweredBy_text_1">Powered By</h1>
+            <div className="footer_habari_parent_1">
+              <h1 className="footer_habari_poweredBy_text_1">Powered By</h1>
               <img
                 src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/habari-logo-2.png"
-                class="footer_habari_logo_1"
+                className="footer_habari_logo_1"
               />
             </div>
           </div>
-          <div class="footer_container_2_2">
+          <div className="footer_container_2_2">
             <div id="footer-company-address">
               <strong>CAPE TOWN OFFICE: </strong> 36 Old Mill Road, Ndabeni,
               Maitland, 7405, Western Cape | Telephone: (021) 530 3300 | Fax:

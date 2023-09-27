@@ -6,6 +6,10 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import fetchMenu from "./handlers/handleMenu";
+import NewsAndTrends from "./pages/NewsAndTrends";
+import Markets from "./pages/Markets";
+import Cookbooks from "./pages/Cookbooks";
+import Profiles from "./pages/Profiles";
 
 const Root = ({ state }) => {
   const [headerData, setHeaderData] = useState("/");
@@ -95,6 +99,29 @@ const Root = ({ state }) => {
       <Switch>
         <HomePage
           when={data.route === "/"}
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          headerIsSticky={headerIsSticky}
+        />
+        <NewsAndTrends
+          when={
+            data.route === "/news-and-trends/" ||
+            data.route === "/news-and-trends/restaurants/"
+          }
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          headerIsSticky={headerIsSticky}
+        />
+        <Markets
+          when={data.route === "/news-and-trends/markets/"}
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          headerIsSticky={headerIsSticky}
+        />
+        <Cookbooks
+          when={data.route === "/news-and-trends/cookbooks/"}
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          headerIsSticky={headerIsSticky}
+        />
+        <Profiles
+          when={data.route === "/news-and-trends/profiles/"}
           headerStickyContainerHeight={headerStickyContainerHeight}
           headerIsSticky={headerIsSticky}
         />

@@ -354,10 +354,21 @@ WIDE NAV
   width: 220px;
 }
 
+.nav_wide_links_span_1 > span > svg {
+  transform: translateY(1px);
+}
+
 .nav_wide_links_span_1 {
   color: black;
   font-size: 12px;
+  cursor: pointer;
   font-weight: bold;
+  position: relative;
+}
+
+.nav_wide_links_span_1 > a {
+  color: black;
+  text-decoration: none;
 }
 
 .nav_wide_placeholder_parent_1 {
@@ -385,12 +396,13 @@ WIDE NAV
   justify-content: flex-start;
 }
 
-.nav_wide_links_parent_1 > a {
+.nav_wide_links_parent_1 > span {
   text-decoration: none;
 }
 
+.nav_wide_links_container_1:hover > span > a,
 .nav_wide_links_container_1:hover > span {
-  color: var(--pinkish_color);
+  color: var(--pinkish_color) !important;
 }
 
 .nav_wide_links_container_1 {
@@ -500,6 +512,40 @@ WIDE DROPDOWN NAV
 //
 //
 //
+DROPDOWN
+*/
+.nav_wide_links_dropdown_container_1 {
+  top: 100%;
+  left: 50%;
+  z-index: 999;
+  display: none;
+  padding: 10px 0px;
+  min-width: 150px;
+  position: absolute;
+  width: fit-content;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  transform: translateX(-50%);
+  background-color: var(--pinkish_color);
+}
+
+.nav_wide_links_dropdown_container_1 > a {
+  color: black;
+  padding: 5px 10px;
+}
+
+.nav_wide_links_container_1:hover .nav_wide_links_dropdown_container_1 {
+  display: flex;
+}
+
+/* 
+//
+//
+//
+//
+//
+//
 CAROUSEL
 */
 
@@ -573,21 +619,13 @@ CAROUSEL
 }
 
 .header_next_button {
-  transform: translate(100px) rotate(135deg);
+  color: black;
+  transform: translateX(30px);
 }
 
 .header_prev_button {
-  transform: translate(-100px) rotate(-45deg);
-}
-
-.header_next_button,
-.header_prev_button {
-  color: red;
-  width: 15px;
-  height: 15px;
-  border-color: black;
-  border-style: solid;
-  border-width: 3px 0px 0px 3px;
+  color: black;
+  transform: translateX(-30px);
 }
 
 /* 
@@ -2499,6 +2537,7 @@ COOK BOOKS
 /*
 COOK BOOKS - PLACEHOLDER
 */
+
 .cook_books_placeholder_parent_1 {
   width: 100%;
   display: flex;
@@ -2522,6 +2561,29 @@ COOK BOOKS - PLACEHOLDER
 .cook_books_placeholder_parent_1 > span > span {
   width: 220px;
   height: 285px;
+}
+
+.cook_books_placeholder_parent_2 {
+  width: 100%;
+  display: flex;
+  color: black;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cook_books_placeholder_parent_2 > span {
+  width: 100%;
+  display: flex;
+  color: black;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cook_books_placeholder_parent_2 > span > span {
+  width: 212px;
+  height: 350px;
 }
 
 /*
@@ -2568,15 +2630,20 @@ COOK BOOKS - CAROUSEL
   transform: translateY(5px);
 }
 
+.cookbook_carousel_item_parent_2,
 .cookbook_carousel_item_parent_1 {
   width: 100%;
   display: flex;
-  padding: 10px 10px;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
 }
 
+.cookbook_carousel_item_parent_1 {
+  padding: 10px 10px;
+}
+
+.cookbook_carousel_item_container_2,
 .cookbook_carousel_item_container_1 {
   min-height: 430px;
   position: relative;
@@ -2589,6 +2656,25 @@ COOK BOOKS - CAROUSEL
   color: black;
   background-color: white;
   max-width: calc(var(--maxContentWidth) / 4.3);
+}
+
+.cookbook_carousel_image_2 {
+  width: 212px;
+}
+
+.cookbook_carousel_text_parent_1 {
+  color: black;
+}
+
+.cookbook_carousel_item_container_2 {
+  width: 212px;
+  background-color: white;
+}
+
+.cookbook_carousel_image_div_2,
+.cookbook_carousel_image_div_2_overlay {
+  width: 212px;
+  height: 260px;
 }
 
 .cookbook_carousel_image_1 {
@@ -2608,6 +2694,7 @@ COOK BOOKS - CAROUSEL
   background-color: white;
 }
 
+.cookbook_carousel_image_div_2,
 .cookbook_carousel_image_div_1 {
   position: relative;
   margin-bottom: 15px;
@@ -2762,6 +2849,76 @@ COOK BOOKS - CAROUSEL
 }
 
 .profiles_post_block_text_container_1 > h2 {
+  margin-top: 15px;
+}
+
+/* 
+//
+//
+//
+//
+//
+//
+  PROFILES ON PROFILES PAGE
+*/
+.profiles_post_block_parent_3 {
+  width: 100%;
+  /*  */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.profiles_post_block_parent_2 {
+  width: 100%;
+  /* transform: translateX(5%); */
+  background-color: black;
+  /*  */
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.profiles_post_block_postImg_2_div {
+  background-color: gray;
+  /* transform: translateX(-11%); */
+  /* width: 300px;
+  height: 450px; */
+}
+
+.profiles_post_block_postImg_2 {
+  height: 450px;
+}
+
+.profiles_post_block_text_parent_2 {
+  display: flex;
+  margin-left: 100px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.profiles_post_block_text_parent_2 > button {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.profiles_post_block_text_container_2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.profiles_post_block_text_container_2 > h1 {
+  font-size: 65px;
+  line-height: 56px;
+  margin-bottom: 30px;
+  font-family: "Parisienne", cursive;
+}
+
+.profiles_post_block_text_container_2 > h2 {
   margin-top: 15px;
 }
 
@@ -3151,6 +3308,39 @@ svg {
 .carousel-control-prev,
 .carousel-control-next {
   width: 0% !important;
+}
+
+/* 
+  //
+  //
+  //
+  //
+  //
+  //
+  BOOTSTRAP
+  */
+.next_article_page_parent_1 > button:hover {
+  color: silver;
+}
+
+.next_article_page_parent_1 > button {
+  border: 0px;
+  width: 100px;
+  font-size: 12px;
+  padding: 5px 0px;
+  margin: 0px 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.next_article_button_1 {
+  color: white;
+  background-color: #858585;
+}
+
+.next_article_button_2 {
+  color: white;
+  background-color: black;
 }
 
 /*

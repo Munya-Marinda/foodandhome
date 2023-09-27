@@ -1282,6 +1282,7 @@ const fetchMenu = () => {
   const data = {};
 
   for (let i = 0; i < menuData.length; i++) {
+    //
     const url = menuData[i].url.substring(
       "https://staging.capetownetc.com".length
     );
@@ -1290,7 +1291,7 @@ const fetchMenu = () => {
     const id = menuData[i].ID;
     const categoryID = menuData[i].object_id;
     const type = menuData[i].object;
-
+    //
     if (menu_item_parent_id.toString() !== "0" && url !== "/") {
       data[menu_item_parent_id].children.push({
         id: categoryID,
@@ -1307,17 +1308,8 @@ const fetchMenu = () => {
         children: [],
       };
     }
+    //
   }
-
-  // return {
-  //   _20074_: data[20074],
-  //   _212963_: data[212963],
-  //   _11_: data[11],
-  //   _212964_: data[212964],
-  //   _107472_: data[107472],
-  //   _212990_: data[212990],
-  //   _212997_: data[212997],
-  // };
 
   return {
     _0_: {
@@ -1330,49 +1322,114 @@ const fetchMenu = () => {
     _1_: {
       id: "1",
       title: "Recipes",
-      url: "",
+      url: "/recipes/",
       type: "category",
-      children: [],
+      children: [
+        {
+          id: "10375",
+          title: "Restaurants",
+          url: "/recipes/restaurants/",
+          type: "category",
+        },
+      ],
     },
     _2_: {
       id: "2",
       title: "How To",
-      url: "",
+      url: "/how-to/",
       type: "category",
       children: [],
     },
     _3_: {
       id: "3",
       title: "News & Trends",
-      url: "",
+      url: "news-and-trends",
       type: "category",
-      children: [],
+      children: [
+        {
+          id: "10375",
+          title: "- Restaurants",
+          url: "/news-and-trends/restaurants/",
+          type: "category",
+        },
+        {
+          id: "10376",
+          title: "Events & Festivals",
+          url: "/news-and-trends/events-and-festivals/",
+          type: "category",
+        },
+        {
+          id: "7747",
+          title: "- Markets",
+          url: "/news-and-trends/markets/",
+          type: "category",
+        },
+        {
+          id: "10378",
+          title: "- Profiles",
+          url: "/news-and-trends/profiles/",
+          type: "category",
+        },
+        {
+          id: "10379",
+          title: "Wine Pairing",
+          url: "/news-and-trends/wine-pairing/",
+          type: "category",
+        },
+        {
+          id: "10380",
+          title: "- Cookbooks",
+          url: "/news-and-trends/cookbooks/",
+          type: "category",
+        },
+      ],
     },
     _4_: {
       id: "4",
       title: "Foodie Deals",
-      url: "",
+      url: "foodie-deals",
       type: "category",
-      children: [],
+      children: [
+        {
+          id: "10375",
+          title: "Deals",
+          url: "/foodie-deals/deals/",
+          type: "category",
+        },
+      ],
     },
     _5_: {
       id: "5",
       title: "Videos",
-      url: "",
+      url: "/videos/",
       type: "category",
-      children: [],
+      children: [
+        {
+          id: "10375",
+          title: "How To",
+          url: "/videos/how-to/",
+          type: "category",
+        },
+      ],
     },
     _6_: {
       id: "6",
       title: "Win",
-      url: "",
+      url: "/win/",
       type: "category",
-      children: [],
+      children: [
+        {
+          id: "10375",
+          title: "T & Cs",
+          url: "/win/t-and-cs/",
+          type: "category",
+        },
+      ],
     },
     _7_: {
       id: "7",
       title: "Advertise",
-      url: "",
+      url: "/advertise/",
       type: "category",
       children: [],
     },
