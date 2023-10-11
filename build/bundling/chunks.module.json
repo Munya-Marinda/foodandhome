@@ -1,7 +1,7 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "4ebbb83dc7728702bbad",
+  "hash": "5905858bda645f0fb60b",
   "publicPath": "",
   "outputPath": "C:\\repos\\foodandhome\\build\\static",
   "assetsByChunkName": {
@@ -10,7 +10,7 @@
   "assets": [
     {
       "name": "foodandhome.module.js",
-      "size": 14502827,
+      "size": 14662572,
       "chunks": [
         "foodandhome"
       ],
@@ -18,7 +18,7 @@
         "foodandhome"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,

@@ -27,8 +27,8 @@
   --content_spacing_top_3: 20px;
   --content_spacing_bottom_1: 70px;
   --content_spacing_bottom_2: 35px;
-  --post_block_1_featureImg_1_width: 627.259px;
-  --post_block_1_featureImg_1_height: 415.458px;
+  --post_block_1_featureImg_1_width: 437px;
+  --post_block_1_featureImg_1_height: 593px;
   --post_block_2_header_parent_1_width: 721px;
   --post_block_2_featureImg_1_width: 324px;
   --post_block_2_featureImg_1_height: 440px;
@@ -118,7 +118,7 @@ body {
   background-color: var(--ad_gray_1);
   height: var(--ad_vertical_height_1);
   z-index: 999;
-  display: none;
+  /* display: none; */
 }
 
 .ad_horizontal_2_parent {
@@ -918,8 +918,32 @@ HOME POST BLOCK 1
 }
 
 .post_block_1_featureImgs_1 {
-  width: 304.163px;
-  height: 201.458px;
+  width: 205px;
+  height: 278px;
+}
+
+.post_block_1_container_1_full_parent_1 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.post_block_1_container_1_full_1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post_block_1_container_1_full_2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 /* 

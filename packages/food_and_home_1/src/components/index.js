@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import fetchMenu from "./handlers/handleMenu";
+import NewsAndTrendsCategory from "./pages/NewsAndTrendsCategory";
 import NewsAndTrends from "./pages/NewsAndTrends";
 import Markets from "./pages/Markets";
 import Cookbooks from "./pages/Cookbooks";
@@ -103,10 +104,12 @@ const Root = ({ state }) => {
           headerIsSticky={headerIsSticky}
         />
         <NewsAndTrends
-          when={
-            data.route === "/news-and-trends/" ||
-            data.route === "/news-and-trends/restaurants/"
-          }
+          when={data.route === "/news-and-trends/"}
+          headerStickyContainerHeight={headerStickyContainerHeight}
+          headerIsSticky={headerIsSticky}
+        />
+        <NewsAndTrendsCategory
+          when={data.route === "/news-and-trends/restaurants/"}
           headerStickyContainerHeight={headerStickyContainerHeight}
           headerIsSticky={headerIsSticky}
         />
