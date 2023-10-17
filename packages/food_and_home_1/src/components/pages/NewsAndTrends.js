@@ -927,7 +927,12 @@ const NewsAndTrends = ({
         </div>
         <div className="ad_vertical_1_parent"></div>
       </div>
-      <CookbooksCarousel WP_SiteUrl={WP_SiteUrl} _postsSet1={cookbookPosts1} />
+      <CookbooksCarousel
+        WP_SiteUrl={WP_SiteUrl}
+        _postsSet1={cookbookPosts1}
+        _title={"Cookbooks"}
+        _subTitle={"culinary wisdom unleashed"}
+      />
       <div className="post_block_1_parent_2 content_spacing_top_2">
         <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">

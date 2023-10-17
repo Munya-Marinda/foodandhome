@@ -465,7 +465,7 @@ const Header = ({
             )}
           </div>
           <div className="nav_search_parent_1">
-            <input type="search" placeholder="Search for 'stir'" />
+            <input type="search" placeholder="Search for 'stir fry'" />
           </div>
         </div>
       </div>

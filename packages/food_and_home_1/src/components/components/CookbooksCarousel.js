@@ -23,7 +23,7 @@ const CustomNextButton = ({ onClick }) => {
 //
 //
 
-const CookbooksCarousel = ({ WP_SiteUrl, _postsSet1 }) => {
+const CookbooksCarousel = ({ WP_SiteUrl, _postsSet1, _title, _subTitle }) => {
   //
   //
   // FEATURED
@@ -73,14 +73,14 @@ const CookbooksCarousel = ({ WP_SiteUrl, _postsSet1 }) => {
             src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/leaf-left.png"
             className="cook_books_header_art_1"
           />
-          <h1 className="cook_books_header_1">Cookbooks</h1>
+          <h1 className="cook_books_header_1">{_title}</h1>
           <img
             src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/leaf-right-0.png"
             className="cook_books_header_art_1"
           />
         </div>
         <div className="cook_books_header_2_container">
-          <h3 className="cook_books_header_2">culinary wisdom unleashed</h3>
+          <h3 className="cook_books_header_2">{_subTitle}</h3>
         </div>
       </div>
       <div className="cook_books_preview_parent_1">
