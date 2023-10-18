@@ -16,8 +16,10 @@
   --ad_horizontal_height_2: 76px;
   --ad_vertical_width_1: 174px;
   --ad_vertical_height_1: 696px;
+  --ad_vertical_width_2: 267px;
+  --ad_vertical_height_2: 533.113px;
   --ad_square_width_1: 267px;
-  --ad_square_height_1: 267px;
+  --ad_square_height_1: 222.648px;
   --ad_rectangle_width_1: 267px;
   --ad_rectangle_height_1: 600px;
   --ad_gray_1: rgb(232, 233, 234);
@@ -39,12 +41,12 @@
   --post_block_3_postImg_1_height: 268px;
   --post_block_3_postImg_2_width: 90px;
   --post_block_3_postImg_2_height: 120px;
-  --profiles_post_block_4_postImg_2_width: 250px;
-  --profiles_post_block_4_postImg_2_height: 340px;
   --videos_previewImg_1_width: 301px;
   --videos_previewImg_1_height: 184px;
   --full_screen_categories_width_height: calc(125vw / 7);
   */
+  --profiles_post_block_4_postImg_2_width: 410px;
+  --profiles_post_block_4_postImg_2_height: 258px;
   --post_block_4_postImg_2_width: 324px;
   --post_block_4_postImg_2_height: 203.824px;
   --content_spacing_top_1: 70px;
@@ -140,6 +142,13 @@ body {
   height: var(--ad_vertical_height_1);
   z-index: 999;
   /* display: none; */
+}
+
+.ad_vertical_2 {
+  border: 1px solid black;
+  width: var(--ad_vertical_width_2);
+  background-color: var(--ad_gray_1);
+  height: var(--ad_vertical_height_2);
 }
 
 .ad_horizontal_2_parent {
@@ -1437,7 +1446,7 @@ HOME POST BLOCK 2 - RIGHT BAR
 }
 
 .magazine_preview_btn_get_copy_parent_1 > a > span:hover {
-  background-color: #ffb5bb;
+  background-color: #eefbb1;
 }
 
 .magazine_preview_btn_get_copy_parent_1 > a > span {
@@ -1513,7 +1522,7 @@ DADDYS DEALS IFRAME
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--gray_1);
+  background-color: var(--peach_1);
 }
 
 .daddysdeals_iframe_container_1 {
@@ -3003,10 +3012,25 @@ COOK BOOKS - CAROUSEL
   margin-top: 15px;
 }
 
+.profiles_post_block_text_parent_3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.profiles_post_block_text_parent_3 > a > button {
+  border: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px 30px;
+  background-color: white;
+}
+
 .profiles_post_block_text_container_3 > h1 {
   color: black;
-  font-size: 29px;
-  font-family: "Parisienne", cursive;
+  font-size: 14px;
+  font-family: Arial;
 }
 
 .profiles_post_block_text_container_3 > h2 {
