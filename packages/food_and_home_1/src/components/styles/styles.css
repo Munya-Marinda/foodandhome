@@ -1,3 +1,9 @@
+/*
+font-family: 'Bodoni Moda', serif;
+font-family: 'Ms Madi', cursive;
+font-family: 'Noto Sans', sans-serif; 
+*/
+
 /* VARIABLES */
 :root {
   --maxContentWidth: 945px;
@@ -694,8 +700,9 @@ IMAGE ICONS (CATEGORY | IMAGE | PLAY | COMMENTS)
 
 .category_container_1 > span {
   color: white;
+  font-size: 12px;
   font-weight: 500;
-  font-size: 10px;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .image_play_comments_container_1 {
@@ -928,23 +935,15 @@ HOME POST BLOCK 1
   box-shadow: 3px 3px 1px black;
 }
 
-/* OVERLAY STYLING SET 1 */
+/* OVERLAY STYLING */
 
-.post_block_1_featureImg_container_1_darkOverlay > div > a > h1 {
-  font-size: 22px;
-}
-
-/* OVERLAY STYLING SET 2 */
-
-.post_block_1_featureImgs_container_1_darkOverlay > div > a > h1 {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-/* OVERLAY STYLING SET 3 */
-
+.post_block_1_featureImg_container_1_darkOverlay > div > a > h1,
+.post_block_1_featureImgs_container_1_darkOverlay > div > a > h1,
 .post_block_2_postImg_container_1_darkOverlay > div > a > h1 {
-  font-size: 16px;
+  color: black;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Noto Sans", sans-serif;
 }
 
 /* END OF OVERLAY STYLING */
@@ -1257,7 +1256,7 @@ HOME POST BLOCK 1
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px 0px 5px 10px;
+  padding: 5px 0px 5px 10px;
   justify-content: flex-start;
   border-bottom: 1px solid black;
   background-color: black;
@@ -1265,9 +1264,9 @@ HOME POST BLOCK 1
 
 .post_block_2_header_1 {
   color: white;
-  font-size: 30px;
-  font-weight: bold;
-  font-family: serif;
+  font-size: 32px;
+  font-weight: 900;
+  font-family: "Bodoni Moda", serif;
 }
 
 .post_block_2_headerLink_1 {
@@ -1375,11 +1374,12 @@ HOME POST BLOCK 1
 
 .post_block_3_postText_1 > a > h1,
 .post_block_2_postText_1 > a > h1 {
-  font-size: 20px;
-  font-weight: 500;
-  color: black;
   margin: 0px;
   padding: 0px;
+  color: black;
+  font-size: 22px;
+  font-weight: 500;
+  font-family: "Noto Sans", sans-serif;
 }
 
 /* 
@@ -2684,17 +2684,17 @@ COOK BOOKS - CAROUSEL
 }
 
 .cook_books_header_1 {
-  font-size: 50px;
+  font-size: 36px;
   margin: 0px 15px;
-  font-weight: bold;
-  font-family: serif;
+  font-weight: 900;
   letter-spacing: -2px;
+  font-family: "Bodoni Moda", serif;
 }
 
 .cook_books_header_2 {
   margin-top: 10px;
-  font-size: 2.7rem;
-  font-family: "Parisienne", cursive;
+  font-size: 40px;
+  font-family: "Ms Madi", cursive;
 }
 
 .cook_books_header_art_1 {
@@ -2717,7 +2717,7 @@ COOK BOOKS - CAROUSEL
 
 .cookbook_carousel_item_container_2,
 .cookbook_carousel_item_container_1 {
-  min-height: 430px;
+  min-height: 389px;
   position: relative;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
@@ -2905,21 +2905,25 @@ COOK BOOKS - CAROUSEL
 
 .recipes_youll_love_text_1 {
   color: black;
+  margin-top: 10px;
+  font-weight: bold;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .recipes_youll_love_header_1 {
   color: black;
   font-size: 30px;
-  font-weight: bold;
-  font-family: serif;
+  font-weight: 900;
   margin-left: 10px;
   margin-right: 10px;
+  font-family: "Bodoni Moda", serif;
 }
 
 .recipes_youll_love_header_2 {
-  font-size: 35px;
+  font-size: 45px;
+  font-weight: 100;
   margin-left: 2px;
-  font-family: "Parisienne", cursive;
+  font-family: "Ms Madi", cursive;
 }
 
 .recipes_youll_love_art_1 {

@@ -12,7 +12,7 @@ const CustomPrevButton = ({ onClick }) => {
       onClick={onClick}
       className="cookbook_carousel_button_prev_parent_1"
       style={{
-        transform: "translateX(20px)",
+        transform: "translate(10px, -10px)",
       }}
     >
       <div className="cookbook_carousel_prev_button" />
@@ -25,7 +25,7 @@ const CustomNextButton = ({ onClick }) => {
       onClick={onClick}
       className="cookbook_carousel_button_next_parent_1"
       style={{
-        transform: "translateX(-20px)",
+        transform: "translate(-10px, -10px)",
       }}
     >
       <div className="cookbook_carousel_next_button" />
@@ -198,6 +198,7 @@ const RecipesCarousel = () => {
                   {postsSet1.length !== 0 ? (
                     <>
                       <Carousel
+                        indicators={false}
                         onSelect={handleSelect}
                         activeIndex={activeIndex}
                         prevIcon={<CustomPrevButton />}
@@ -232,17 +233,6 @@ const RecipesCarousel = () => {
                             </Carousel.Item>
                           ))}
                       </Carousel>
-                      <div className="cookbook_custom_carousel_indicators">
-                        {postsChuncksSet1
-                          .slice(0, maxCarouselItems)
-                          .map((postChunk, index) => (
-                            <div
-                              key={index}
-                              onClick={() => handleSelect(index)}
-                              className={index === activeIndex ? "active" : ""}
-                            ></div>
-                          ))}
-                      </div>
                     </>
                   ) : (
                     <div className="spinner_parent_0">
