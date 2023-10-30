@@ -1276,7 +1276,7 @@ HOME POST BLOCK 1
 
 .post_block_2_headerLinks_parent_1 {
   margin-left: 70px;
-  transform: translateY(5px);
+  transform: translateY(1px);
 }
 
 .post_block_2_headerLinks_parent_1 > a:hover {
@@ -1506,13 +1506,9 @@ HOME POST BLOCK 2 - RIGHT BAR
   transform: translateY(0px);
 }
 
+.magazine_topNews_icon_2 > img,
 .magazine_topNews_icon_1 > img {
   width: 8px;
-}
-
-.magazine_topNews_icon_2 {
-  color: white;
-  font-size: 14px;
 }
 
 .magazine_topNews_container_1 {

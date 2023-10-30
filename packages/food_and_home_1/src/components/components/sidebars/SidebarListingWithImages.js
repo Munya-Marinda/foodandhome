@@ -5,6 +5,7 @@ import CategoryDateText from "../CategoryDateText";
 import { CustomWPRestServicePostObject } from "../../js/main";
 import { FaAngleRight } from "react-icons/fa";
 import ArticleIcons from "../ArticleIcons";
+import CategoryDateText_2 from "../CategoryDateText_2";
 
 const SidebarListingWithImages = ({
   link,
@@ -76,8 +77,8 @@ const SidebarListingWithImages = ({
                                 }}
                               />
                             </Link>
-                            <CategoryDateText
-                              categoryText={_categoryText}
+                            <CategoryDateText_2
+                              categoryText={customPost.categoryText}
                               dateText={customPost.date}
                             />
                           </div>

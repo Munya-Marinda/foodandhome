@@ -18,6 +18,7 @@ import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
 import TwoFeatureArticle from "../components/ArticleViews/TwoFeatureArticle";
 import ColumnArticleView from "../components/ArticleViews/ColumnArticleView";
 import SidebarListingWithOutImages from "../components/sidebars/SidebarListingWithOutImages";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
@@ -461,111 +462,27 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   </div>
                 </div>
               </div>
-              <div className="magazine_topNews_parent_1">
-                <Link link="#top-news">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Top Recipes
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
-                    </span>
-                  </div>
-                </Link>
 
-                <div className="topGuides_parent_1">
-                  {postsSet1 !== null ? (
-                    <>
-                      {postsSet1 !== false ? (
-                        <>
-                          {postsSet1.length !== 0 ? (
-                            <>
-                              {postsSet1.slice(0, 4)?.map((post, index) => {
-                                const customPost =
-                                  CustomWPRestServicePostObject(
-                                    WP_SiteUrl,
-                                    post,
-                                    postsSet1_categoryID
-                                  );
-                                //
-                                //
-                                //
-                                //
-                                //
-                                return (
-                                  <div
-                                    className="topGuides_container_1"
-                                    key={index}
-                                  >
-                                    <div className="topGuides_postImg_1">
-                                      <img
-                                        alt=""
-                                        src={customPost.imgUrl}
-                                        className="post_block_3_postImg_2"
-                                      />
-                                    </div>
-                                    <div className="topGuides_textContainer_1">
-                                      <CategoryDateText_2
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      />
-                                      <Link link={customPost.slug}>
-                                        <h6
-                                          dangerouslySetInnerHTML={
-                                            customPost.title
-                                          }
-                                        />
-                                      </Link>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </>
-                          ) : (
-                            <div className="spinner_parent_1">
-                              <h1>NO NEW POSTS FOUND</h1>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>FAILED TO FETCH POSTS</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="topGuides_parent_1">
-                      {["", "", "", ""].map((m, n) => (
-                        <div
-                          className="placeholder_child_8_parent_parent"
-                          key={n}
-                        >
-                          <Placeholder animation="glow" className="">
-                            <Placeholder className="placeholder_child_8_1" />
-                          </Placeholder>
-                          <Placeholder animation="glow" className="">
-                            <Placeholder
-                              xs={10}
-                              className="placeholder_child_8_2"
-                            />
-                            <Placeholder
-                              xs={5}
-                              className="placeholder_child_8_2"
-                            />
-                          </Placeholder>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
+              <SidebarListingWithImages
+                title="Top Recipes"
+                link={"/top-recipes/"}
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryTitle={"RECIPES"}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
 
-                <div className="ad_square_1">
-                  <p>[AD]</p>
-                </div>
+              <div className="ad_square_1">
+                <p>[AD]</p>
+              </div>
 
-                <div className="ad_vertical_2 content_spacing_top_2">
-                  <p>[AD]</p>
-                </div>
+              <div
+                className="ad_vertical_2"
+                style={{
+                  marginTop: "25px",
+                }}
+              >
+                <p>[AD]</p>
               </div>
             </div>
           </div>
@@ -575,7 +492,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
       <DaddysDealsIFrame />
 
-      <div className="post_block_1_parent_2 content_spacing_top_3">
+      <div className="post_block_1_parent_2 content_spacing_top_2">
         <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">

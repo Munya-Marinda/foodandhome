@@ -23,7 +23,7 @@ const TwoFeatureArticle = ({
           <span className="post_block_2_header_1">{categoryHeader}</span>
           <div className="post_block_2_headerLinks_parent_1">
             <span className="magazine_topNews_icon_2">
-              <FaGreaterThan />
+              <img src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/arrow-greater-than-2.svg" />
             </span>
           </div>
         </div>
