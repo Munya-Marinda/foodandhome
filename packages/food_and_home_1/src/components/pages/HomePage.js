@@ -17,7 +17,7 @@ import ThreeByThreeArticleView from "../components/ArticleViews/ThreeByThreeArti
 import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
 import TwoFeatureArticle from "../components/ArticleViews/TwoFeatureArticle";
 import ColumnArticleView from "../components/ArticleViews/ColumnArticleView";
-// import CategoryDateText_2 from "../components/CategoryDateText_2";
+import SidebarListingWithOutImages from "../components/sidebars/SidebarListingWithOutImages";
 
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
@@ -81,13 +81,11 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
             cookbookPosts1_categoryID +
             "&per_page=100&orderby=date&order=desc&_embed"
         );
-        console.log("parent response", response);
         if (!response.ok) {
           setCookbookPosts1(false);
           return;
         }
         const postsData = await response.json();
-        console.log("parent data", postsData);
         setCookbookPosts1(postsData);
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -98,13 +96,14 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
     //
     //
     //
-
+    //
+    //
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
-        .getElementById("ad_vertical_1_id_1")
+        .getElementById("ad_vertical_1_id_1_position")
         .getBoundingClientRect().left;
       const verticalAd2Left = document
-        .getElementById("ad_vertical_1_id_2")
+        .getElementById("ad_vertical_1_id_2_position")
         .getBoundingClientRect().left;
       setAdPositions({
         verticalAd1Left: verticalAd1Left,
@@ -112,6 +111,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
       });
     };
     setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
   }, []);
   //
   //
@@ -153,6 +153,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
           ></div>
         </div>
 
@@ -351,6 +355,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 : {}
             }
           ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
+          ></div>
         </div>
       </div>
 
@@ -361,7 +369,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
         _subTitle={"quick, delicious, and guaranteed"}
       />
 
-      <div className="post_block_1_parent_2 content_spacing_top_3">
+      <div className="post_block_1_parent_2 content_spacing_top_3 content_spacing_bottom_2">
         <div className="ad_vertical_1_parent"></div>
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
@@ -373,9 +381,10 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   WP_SiteUrl={WP_SiteUrl}
                   total_time={"40 minutes"}
                   categoryHeader={"Recipes"}
+                  backgroundColor={"green"}
+                  categoryHeaderLink={"/recipes/"}
                   postsSet1_categoryID={postsSet1_categoryID}
                   header={"Carrot falafel with lemon yogurt"}
-                  categoryHeaderLink={"/recipes/"}
                   blurb={"Tasty and simple homemade falafels."}
                 />
 
@@ -406,6 +415,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   WP_SiteUrl={WP_SiteUrl}
                   total_time={"40 minutes"}
                   categoryHeader={"How To"}
+                  backgroundColor={"gray"}
                   categoryHeaderLink={"/how-to/"}
                   postsSet1_categoryID={postsSet1_categoryID}
                   header={"Carrot falafel with lemon yogurt"}
@@ -598,107 +608,17 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 <p>[AD]</p>
               </div>
 
-              <div className="magazine_topNews_parent_1">
-                <Link link="#top-news">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Top Recipes
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
-                    </span>
-                  </div>
-                </Link>
+              <SidebarListingWithOutImages
+                link={"/news/"}
+                title={"Top News"}
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryTitle={"NEWS"}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
 
-                <div className="topGuides_parent_1">
-                  {postsSet1 !== null ? (
-                    <>
-                      {postsSet1 !== false ? (
-                        <>
-                          {postsSet1.length !== 0 ? (
-                            <>
-                              {postsSet1.slice(0, 4)?.map((post, index) => {
-                                const customPost =
-                                  CustomWPRestServicePostObject(
-                                    WP_SiteUrl,
-                                    post,
-                                    postsSet1_categoryID
-                                  );
-                                //
-                                //
-                                //
-                                //
-                                //
-                                return (
-                                  <div
-                                    className="topGuides_container_1"
-                                    key={index}
-                                  >
-                                    <div className="topGuides_postImg_1">
-                                      <img
-                                        alt=""
-                                        src={customPost.imgUrl}
-                                        className="post_block_3_postImg_2"
-                                      />
-                                    </div>
-                                    <div className="topGuides_textContainer_1">
-                                      <CategoryDateText_2
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      />
-                                      <Link link={customPost.slug}>
-                                        <h6
-                                          dangerouslySetInnerHTML={
-                                            customPost.title
-                                          }
-                                        />
-                                      </Link>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </>
-                          ) : (
-                            <div className="spinner_parent_1">
-                              <h1>NO NEW POSTS FOUND</h1>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>FAILED TO FETCH POSTS</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="topGuides_parent_1">
-                      {["", "", "", ""].map((m, n) => (
-                        <div
-                          className="placeholder_child_8_parent_parent"
-                          key={n}
-                        >
-                          <Placeholder animation="glow" className="">
-                            <Placeholder className="placeholder_child_8_1" />
-                          </Placeholder>
-                          <Placeholder animation="glow" className="">
-                            <Placeholder
-                              xs={10}
-                              className="placeholder_child_8_2"
-                            />
-                            <Placeholder
-                              xs={5}
-                              className="placeholder_child_8_2"
-                            />
-                          </Placeholder>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <div className="ad_square_1">
-                  <p>[AD]</p>
-                </div>
+              <div className="ad_square_1">
+                <p>[AD]</p>
               </div>
             </div>
           </div>

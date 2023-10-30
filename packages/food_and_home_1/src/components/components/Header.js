@@ -13,6 +13,7 @@ import Modal from "react-bootstrap/Modal";
 import SocialMediaIcons_sm from "./SocialMediaIcons_sm";
 import SubmitYourContentForm from "./SubmitYourContentForm";
 import fetchMenu from "../handlers/handleMenu";
+import CategoryDateText_2 from "./CategoryDateText_2";
 
 const CustomPrevButton = ({ onClick }) => {
   return (
@@ -39,7 +40,7 @@ const Header = ({
   change_headerStickyContainerHeight,
 }) => {
   const maxCarouselItems = 4;
-  const postsSet1_categoryID = 1005;
+  const postsSet1_categoryID = 25282;
   const [postsSet1, setPostsSet1] = useState(null);
   const [postsChuncksSet1, setPostsChuncksSet1] = useState(null);
   const [menuChildren, setmenuChildren] = useState(null);
@@ -68,7 +69,21 @@ const Header = ({
           setPostsSet1(false);
           return;
         }
-        const postsData = await response.json();
+        const _postsData = await response.json();
+        const postsData = [
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+          _postsData[0],
+        ];
 
         // Create an array to hold the chunks of posts
         const chunkSize = 4;
@@ -529,7 +544,7 @@ const Header = ({
                                         key={index2}
                                         className="header_carousel_text_parent_1"
                                       >
-                                        <CategoryDateText
+                                        <CategoryDateText_2
                                           dateText={customPost.date}
                                           categoryText={customPost.categoryText}
                                         />

@@ -8,14 +8,26 @@ import { FaStar } from "react-icons/fa";
 //
 const CustomPrevButton = ({ onClick }) => {
   return (
-    <div onClick={onClick} className="cookbook_carousel_button_prev_parent_1">
+    <div
+      onClick={onClick}
+      className="cookbook_carousel_button_prev_parent_1"
+      style={{
+        transform: "translateX(20px)",
+      }}
+    >
       <div className="cookbook_carousel_prev_button" />
     </div>
   );
 };
 const CustomNextButton = ({ onClick }) => {
   return (
-    <div onClick={onClick} className="cookbook_carousel_button_next_parent_1">
+    <div
+      onClick={onClick}
+      className="cookbook_carousel_button_next_parent_1"
+      style={{
+        transform: "translateX(-20px)",
+      }}
+    >
       <div className="cookbook_carousel_next_button" />
     </div>
   );

@@ -68,13 +68,11 @@ const NewsAndTrends = ({
             cookbookPosts1_categoryID +
             "&per_page=100&orderby=date&order=desc&_embed"
         );
-        console.log("parent response", response);
         if (!response.ok) {
           setCookbookPosts1(false);
           return;
         }
         const postsData = await response.json();
-        console.log("parent data", postsData);
         setCookbookPosts1(postsData);
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -85,13 +83,14 @@ const NewsAndTrends = ({
     //
     //
     //
-
+    //
+    //
     const setAdPositionsFunc = () => {
       const verticalAd1Left = document
-        .getElementById("ad_vertical_1_id_1")
+        .getElementById("ad_vertical_1_id_1_position")
         .getBoundingClientRect().left;
       const verticalAd2Left = document
-        .getElementById("ad_vertical_1_id_2")
+        .getElementById("ad_vertical_1_id_2_position")
         .getBoundingClientRect().left;
       setAdPositions({
         verticalAd1Left: verticalAd1Left,
@@ -99,6 +98,7 @@ const NewsAndTrends = ({
       });
     };
     setAdPositionsFunc();
+    window.addEventListener("resize", setAdPositionsFunc);
   }, []);
   //
   //
@@ -146,6 +146,10 @@ const NewsAndTrends = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_1_position"
           ></div>
         </div>
 
@@ -687,6 +691,10 @@ const NewsAndTrends = ({
                   }
                 : {}
             }
+          ></div>
+          <div
+            className="ad_vertical_1_ zero_opacity"
+            id="ad_vertical_1_id_2_position"
           ></div>
         </div>
       </div>

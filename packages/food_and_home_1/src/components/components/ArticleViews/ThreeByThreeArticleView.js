@@ -59,7 +59,13 @@ const ThreeByThreeArticleView = ({
                               categoryText={customPost.categoryText}
                               dateText={customPost.date}
                             />
-                            <Link link={customPost.slug}>
+                            <Link
+                              link={customPost.slug}
+                              style={{
+                                display: "block",
+                                marginTop: "11px",
+                              }}
+                            >
                               <h1 dangerouslySetInnerHTML={customPost.title} />
                             </Link>
                           </div>

@@ -16,6 +16,7 @@ const LetsCook = ({
   categoryHeader,
   categoryHeaderLink,
   postsSet1_categoryID,
+  backgroundColor,
 }) => {
   return (
     <Fragment>
@@ -24,11 +25,11 @@ const LetsCook = ({
         className="post_block_2_headerLink_1"
         style={{ width: "100%" }}
       >
-        <div className="post_block_2_header_parent_1 content_spacing_bottom_2">
+        <div className="post_block_2_header_parent_1 content_spacing_bottom_3">
           <span className="post_block_2_header_1">{categoryHeader}</span>
           <div className="post_block_2_headerLinks_parent_1">
-            <span className="magazine_topNews_icon_2">
-              <FaGreaterThan />
+            <span className="magazine_topNews_icon_1">
+              <img src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/arrow-greater-than-2.svg" />
             </span>
           </div>
         </div>
@@ -53,7 +54,10 @@ const LetsCook = ({
                     return (
                       <div
                         key={index}
-                        className="profiles_post_block_parent_1 profiles_post_block_green"
+                        className={
+                          "profiles_post_block_parent_1 profiles_post_block_" +
+                          backgroundColor
+                        }
                       >
                         <div className="profiles_post_block_postImg_1_div">
                           <img
@@ -84,6 +88,10 @@ const LetsCook = ({
                               style={{
                                 fontSize: "25px",
                                 marginBottom: "20px",
+                                color:
+                                  backgroundColor === "gray"
+                                    ? "black"
+                                    : "inherit",
                               }}
                             >
                               {header}
@@ -123,7 +131,7 @@ const LetsCook = ({
                             </h1>
                           </div>
                           <Link link={customPost.slug}>
-                            <button>LET'S TALK</button>
+                            <button>LET'S COOK</button>
                           </Link>
                         </div>
                       </div>

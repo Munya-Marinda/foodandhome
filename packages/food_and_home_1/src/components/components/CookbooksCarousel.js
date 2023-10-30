@@ -36,7 +36,6 @@ const CookbooksCarousel = ({ WP_SiteUrl, _postsSet1, _title, _subTitle }) => {
   //
   //
   useEffect(() => {
-    console.log("child", _postsSet1);
     if (_postsSet1 !== null) {
       if (_postsSet1 !== false && typeof _postsSet1 === "object") {
         if (_postsSet1.length !== 0) {

@@ -36,7 +36,6 @@ const Top20SAWinesCarousel = ({ WP_SiteUrl, _postsSet1 }) => {
   //
   //
   useEffect(() => {
-    console.log("child", _postsSet1);
     if (_postsSet1 !== null) {
       if (_postsSet1 !== false && typeof _postsSet1 === "object") {
         if (_postsSet1.length !== 0) {

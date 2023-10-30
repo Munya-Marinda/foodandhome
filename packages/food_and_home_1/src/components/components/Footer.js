@@ -101,7 +101,7 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
             <div className="footer_habari_parent_1">
               <h1 className="footer_habari_poweredBy_text_1">Powered By</h1>
               <img
-                src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/habari-logo-2.png"
+                src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/habari-logo-2.png"
                 className="footer_habari_logo_1"
               />
             </div>

@@ -21,7 +21,10 @@ const ArticleIcons = ({
         {categoryText === undefined ? (
           ""
         ) : (
-          <Link link={categoryLink !== undefined ? categoryLink : "#category"}>
+          <Link
+            link={categoryLink !== undefined ? categoryLink : "#category"}
+            style={{ transform: "translateY(6px)" }}
+          >
             <div className="category_container_1">
               <span>
                 {categoryText !== undefined && categoryText.toUpperCase()}
@@ -36,18 +39,14 @@ const ArticleIcons = ({
             ) : (
               <Link link={cameraLink !== undefined ? cameraLink : "#images"}>
                 <div className="image_play_container_1">
-                  <span>
-                    <FaCamera />
-                  </span>
+                  <img src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/camera-icon-0.svg" />
                 </div>
               </Link>
             )}
 
             <Link link={videoLink !== undefined ? videoLink : "#video-small"}>
               <div className="image_play_container_1">
-                <span>
-                  <FaPlayCircle />
-                </span>
+                <img src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/video-icon-0.svg" />
               </div>
             </Link>
 
@@ -64,7 +63,10 @@ const ArticleIcons = ({
       {showVideo === true ? (
         <Link link={videoLink !== undefined ? videoLink : "#video"}>
           <div className="playVideo_parent_1">
-            <FaPlayCircle />
+            <img
+              src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/video-icon-0.svg"
+              style={{ width: "40px" }}
+            />
           </div>
         </Link>
       ) : (
