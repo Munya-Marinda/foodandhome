@@ -74,6 +74,9 @@ const TwoFeatureArticle = ({
                             cameraLink={customPost.slug}
                             categoryText={customPost.categoryText}
                             categoryLink={"/news/"}
+                            //
+                            showCamera={true}
+                            showTopRight={true}
                           />
                         </div>
                       );

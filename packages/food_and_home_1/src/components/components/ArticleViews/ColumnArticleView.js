@@ -47,10 +47,18 @@ const ColumnArticleView = ({
                             <ArticleIcons
                               commentsLink={customPost.commentsSlug}
                               cameraLink={customPost.slug}
+                              //
+                              showCamera={true}
+                              showTopRight={true}
                             />
                           </div>
                           <div className="post_block_2_postText_1">
-                            <Link link={customPost.slug}>
+                            <Link
+                              link={customPost.slug}
+                              style={{
+                                marginBottom: "15px",
+                              }}
+                            >
                               <h1 dangerouslySetInnerHTML={customPost.title} />
                             </Link>
                             <CategoryDateText
@@ -58,6 +66,9 @@ const ColumnArticleView = ({
                               categoryText={customPost.categoryText}
                             />
                             <div
+                              style={{
+                                marginTop: "15px",
+                              }}
                               className="post_block_2_postText_content_parent_1"
                               dangerouslySetInnerHTML={customPost.excerpt}
                             />

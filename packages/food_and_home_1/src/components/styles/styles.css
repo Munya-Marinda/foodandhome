@@ -814,9 +814,12 @@ CATEGORY | DATE
 .category_date_span_divider_1,
 .category_date_span_category_1 {
   color: black;
+  font-family: "Noto Sans", sans-serif;
 }
+
 .category_date_span_date_1 {
   color: gray;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .category_date_span_divider_1 {
@@ -1351,7 +1354,7 @@ HOME POST BLOCK 1
 }
 
 .post_block_2_postText_content_parent_1 {
-  height: 65px;
+  height: 49px;
   margin-top: 3px;
   overflow: hidden;
   max-width: 440px;
