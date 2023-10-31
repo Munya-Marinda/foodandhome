@@ -4,21 +4,18 @@ import { connect } from "frontity";
 import SocialMediaIcons from "./SocialMediaIcons";
 import Switch from "@frontity/components/switch";
 import Link from "@frontity/components/link";
-import { FaAngleDown, FaAngleLeft, FaAngleRight, FaBars } from "react-icons/fa";
+import { FaAngleDown, FaBars } from "react-icons/fa";
 import { Carousel, Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject, FixInvalidLink } from "../js/main";
-import CategoryDateText from "./CategoryDateText";
 import Accordion from "react-bootstrap/Accordion";
-import Modal from "react-bootstrap/Modal";
 import SocialMediaIcons_sm from "./SocialMediaIcons_sm";
-import SubmitYourContentForm from "./SubmitYourContentForm";
 import fetchMenu from "../handlers/handleMenu";
 import CategoryDateText_2 from "./CategoryDateText_2";
 
 const CustomPrevButton = ({ onClick }) => {
   return (
     <div onClick={onClick} className="header_prev_button">
-      <FaAngleLeft size={20} />
+      <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-less-than-1.svg" />
     </div>
   );
 };
@@ -26,7 +23,7 @@ const CustomPrevButton = ({ onClick }) => {
 const CustomNextButton = ({ onClick }) => {
   return (
     <div onClick={onClick} className="header_next_button">
-      <FaAngleRight size={20} />
+      <img src="https://ambassador.daddysdeals.co.za/features/capetownetc-assets/arrow-greater-than-1.svg" />
     </div>
   );
 };

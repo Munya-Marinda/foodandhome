@@ -69,18 +69,13 @@ const SidebarListingWithImages = ({
                             />
                           </div>
                           <div className="topGuides_textContainer_1">
-                            <Link link={customPost.slug}>
-                              <h6
-                                dangerouslySetInnerHTML={customPost.title}
-                                style={{
-                                  marginBottom: "5px",
-                                }}
-                              />
-                            </Link>
                             <CategoryDateText_2
                               categoryText={customPost.categoryText}
                               dateText={customPost.date}
                             />
+                            <Link link={customPost.slug}>
+                              <h6 dangerouslySetInnerHTML={customPost.title} />
+                            </Link>
                           </div>
                         </div>
                       );

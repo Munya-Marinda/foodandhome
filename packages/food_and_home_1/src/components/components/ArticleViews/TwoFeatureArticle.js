@@ -8,6 +8,8 @@ import ArticleIcons from "../ArticleIcons";
 const TwoFeatureArticle = ({
   postsSet1,
   WP_SiteUrl,
+  slice_end,
+  slice_start,
   categoryHeader,
   categoryHeaderLink,
   postsSet1_categoryID,
@@ -16,7 +18,7 @@ const TwoFeatureArticle = ({
     <Fragment>
       <Link
         link={categoryHeaderLink}
-        className="post_block_2_headerLink_1"
+        className="post_block_2_headerLink_1 content_spacing_bottom_3"
         style={{ width: "100%" }}
       >
         <div className="post_block_2_header_parent_1">
@@ -29,58 +31,60 @@ const TwoFeatureArticle = ({
         </div>
       </Link>
 
-      <div className="post_block_2_posts_container_1 content_spacing_bottom_2">
+      <div className="post_block_3_posts_container_2 content_spacing_bottom_2">
         {postsSet1 !== null ? (
           <>
             {postsSet1 !== false ? (
               <>
                 {postsSet1.length !== 0 ? (
                   <>
-                    {postsSet1.slice(0, 2).map((post, index) => {
-                      const customPost = CustomWPRestServicePostObject(
-                        WP_SiteUrl,
-                        post,
-                        postsSet1_categoryID
-                      );
-                      //
-                      //
-                      //
-                      //
-                      //
-                      return (
-                        <div
-                          key={index}
-                          className={
-                            "post_block_2_postImg_container_1 min_height_200px" +
-                            (index === 1 ? " hide_on_mobile" : "")
-                          }
-                        >
-                          <div className="post_block_2_postImg_container_1_darkOverlay postImageTextOverlay_2">
-                            <div>
-                              <Link link={customPost.slug}>
-                                <h1
-                                  dangerouslySetInnerHTML={customPost.title}
-                                />
-                              </Link>
+                    {postsSet1
+                      .slice(slice_start, slice_end)
+                      .map((post, index) => {
+                        const customPost = CustomWPRestServicePostObject(
+                          WP_SiteUrl,
+                          post,
+                          postsSet1_categoryID
+                        );
+                        //
+                        //
+                        //
+                        //
+                        //
+                        return (
+                          <div
+                            key={index}
+                            className={
+                              "post_block_2_postImg_container_1 min_height_200px content_spacing_bottom_2" +
+                              (index === 1 ? " hide_on_mobile" : "")
+                            }
+                          >
+                            <div className="post_block_2_postImg_container_1_darkOverlay postImageTextOverlay_2">
+                              <div>
+                                <Link link={customPost.slug}>
+                                  <h1
+                                    dangerouslySetInnerHTML={customPost.title}
+                                  />
+                                </Link>
+                              </div>
                             </div>
+                            <img
+                              src={customPost.imgUrl}
+                              alt=""
+                              className="post_block_2_featureImg_1 "
+                            />
+                            <ArticleIcons
+                              commentsLink={customPost.commentsSlug}
+                              cameraLink={customPost.slug}
+                              categoryText={customPost.categoryText}
+                              categoryLink={"/news/"}
+                              //
+                              showCamera={true}
+                              showTopRight={true}
+                            />
                           </div>
-                          <img
-                            src={customPost.imgUrl}
-                            alt=""
-                            className="post_block_2_featureImg_1 "
-                          />
-                          <ArticleIcons
-                            commentsLink={customPost.commentsSlug}
-                            cameraLink={customPost.slug}
-                            categoryText={customPost.categoryText}
-                            categoryLink={"/news/"}
-                            //
-                            showCamera={true}
-                            showTopRight={true}
-                          />
-                        </div>
-                      );
-                    })}
+                        );
+                      })}
                   </>
                 ) : (
                   <div className="spinner_parent_1">

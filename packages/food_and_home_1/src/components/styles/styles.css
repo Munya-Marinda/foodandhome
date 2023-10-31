@@ -670,6 +670,11 @@ CAROUSEL
   transform: translateX(-30px);
 }
 
+.header_next_button > img,
+.header_prev_button > img {
+  width: 8px;
+}
+
 /* 
 //
 //
@@ -1295,7 +1300,7 @@ HOME POST BLOCK 1
   width: 100%;
   display: flex;
   margin-top: 15px;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: flex-start;
   justify-content: space-between;
   max-width: var(--post_block_2_header_parent_1_width);
@@ -1499,10 +1504,10 @@ HOME POST BLOCK 2 - RIGHT BAR
 }
 
 .magazine_topNews_headerText_1 {
+  color: black;
   font-size: 22px;
   font-weight: bold;
-  color: black;
-  font-family: serif;
+  font-family: "Bodoni Moda", serif;
 }
 
 .magazine_topNews_icon_1 {
@@ -1614,7 +1619,7 @@ FULL WIDTH POST
 .full_width_post_text_container_1 > a > h1 {
   margin: 0px;
   padding: 0px;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .full_width_post_text_container_1 {
@@ -1725,7 +1730,6 @@ FULL WIDTH POST
 }
 
 .post_block_4_postImg_2_container_1 {
-  margin-bottom: 20px;
   width: var(--post_block_4_postImg_2_width);
 }
 
@@ -3100,12 +3104,12 @@ COOK BOOKS - CAROUSEL
 }
 
 .profiles_post_block_postImg_2 {
-  height: 450px;
+  height: 360px;
 }
 
 .profiles_post_block_text_parent_2 {
   display: flex;
-  margin-left: 100px;
+  margin-left: 50px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
@@ -3123,10 +3127,9 @@ COOK BOOKS - CAROUSEL
 }
 
 .profiles_post_block_text_container_2 > h1 {
-  font-size: 65px;
-  line-height: 56px;
+  font-size: 45px; 
   margin-bottom: 30px;
-  font-family: "Parisienne", cursive;
+  font-family: "Ms Madi", cursive;
 }
 
 .profiles_post_block_text_container_2 > h2 {

@@ -1,45 +1,16 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "b841087c86df4e7d9ff0",
+  "hash": "63261e462bd2157ba4c7",
   "publicPath": "",
   "outputPath": "C:\\repos\\foodandhome\\build\\static",
   "assetsByChunkName": {
-    "foodandhome": [
-      "foodandhome.module.js",
-      "foodandhome.ed78b437d337b72c1fd3.hot-update.js"
-    ]
+    "foodandhome": "foodandhome.module.js"
   },
   "assets": [
     {
-      "name": "ed78b437d337b72c1fd3.hot-update.json",
-      "size": 53,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
-      "name": "foodandhome.ed78b437d337b72c1fd3.hot-update.js",
-      "size": 18721,
-      "chunks": [
-        "foodandhome"
-      ],
-      "chunkNames": [
-        "foodandhome"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
       "name": "foodandhome.module.js",
-      "size": 14757070,
+      "size": 14660886,
       "chunks": [
         "foodandhome"
       ],
@@ -47,7 +18,7 @@
         "foodandhome"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     }
   ],
   "filteredAssets": 0,
@@ -57,8 +28,7 @@
         "foodandhome"
       ],
       "assets": [
-        "foodandhome.module.js",
-        "foodandhome.ed78b437d337b72c1fd3.hot-update.js"
+        "foodandhome.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -69,8 +39,7 @@
     {
       "id": "foodandhome",
       "files": [
-        "foodandhome.module.js",
-        "foodandhome.ed78b437d337b72c1fd3.hot-update.js"
+        "foodandhome.module.js"
       ]
     }
   ]

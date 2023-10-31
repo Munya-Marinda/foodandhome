@@ -13,7 +13,7 @@ const Profiles = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   //
   const [adPositions, setAdPositions] = useState(false);
   //
-  const postsSet1_categoryID = 1005;
+  const postsSet1_categoryID = 25282;
   const [postsSet1, setPostsSet1] = useState(null);
   //
   //
@@ -33,7 +33,17 @@ const Profiles = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           return;
         }
         const postsData = await response.json();
-        setPostsSet1(postsData);
+        setPostsSet1([
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+        ]);
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet1(false);

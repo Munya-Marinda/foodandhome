@@ -499,6 +499,8 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
             <div className="post_block_2_header_container_1">
               <div className="post_block_3_posts_container_2">
                 <TwoFeatureArticle
+                  slice_end={2}
+                  slice_start={0}
                   postsSet1={postsSet1}
                   WP_SiteUrl={WP_SiteUrl}
                   categoryHeader={"News & Trends"}
@@ -506,7 +508,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   postsSet1_categoryID={postsSet1_categoryID}
                 />
 
-                <div className="ad_horizontal_2_parent content_spacing_top_2">
+                <div className="ad_horizontal_2_parent">
                   <h6 className="ad_text_1">ADVERTISEMENT</h6>
                   <div className="ad_horizontal_2"></div>
                 </div>

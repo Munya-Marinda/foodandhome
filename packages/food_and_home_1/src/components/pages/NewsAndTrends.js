@@ -49,7 +49,17 @@ const NewsAndTrends = ({
           return;
         }
         const postsData = await response.json();
-        setPostsSet1(postsData);
+        setPostsSet1([
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+          postsData[0],
+        ]);
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet1(false);
