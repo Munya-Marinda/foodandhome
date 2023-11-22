@@ -275,6 +275,16 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                                 );
                               })}
                             </div>
+
+                            <div className="hide_on_desktop">
+                              <ColumnArticleView
+                                slice_end={3}
+                                slice_start={1}
+                                postsSet1={postsSet1}
+                                WP_SiteUrl={WP_SiteUrl}
+                                postsSet1_categoryID={postsSet1_categoryID}
+                              />
+                            </div>
                           </>
                         ) : (
                           <div className="spinner_parent_1">
@@ -321,7 +331,6 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
               <Link link="#search-recipes">
                 <img
-                  width={"945px"}
                   className="submit_your_recipe_banner_img_1 content_spacing_top_2"
                   src={
                     "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/search-recipes-banner-00.png"
@@ -334,7 +343,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 _postsSet1={cookbookPosts1}
               />
 
-              <div className="ad_horizontal_2_parent">
+              <div className="ad_horizontal_2_parent hide_on_mobile">
                 <h6 className="ad_text_1">ADVERTISEMENT</h6>
                 <div className="ad_horizontal_2"></div>
               </div>
@@ -389,7 +398,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   blurb={"Tasty and simple homemade falafels."}
                 />
 
-                <div className="ad_horizontal_2_parent content_spacing_top_2">
+                <div className="ad_horizontal_2_parent hide_on_mobile content_spacing_top_2">
                   <h6 className="ad_text_1">ADVERTISEMENT</h6>
                   <div className="ad_horizontal_2"></div>
                 </div>
@@ -402,13 +411,29 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   postsSet1_categoryID={postsSet1_categoryID}
                 />
 
-                <img
-                  width={"660px"}
-                  className="submit_your_recipe_banner_img_1 content_spacing_top_2  content_spacing_bottom_2"
-                  src={
-                    "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/submit-your-recipe-banner-0.png"
-                  }
-                />
+                <Link
+                  link="#search-recipes"
+                  style={{
+                    width: "100%",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      alignItems: "center",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <img
+                      className="submit_your_recipe_banner_img_2 content_spacing_top_2 content_spacing_bottom_2"
+                      src={
+                        "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/submit-your-recipe-banner-0.png"
+                      }
+                    />
+                  </div>
+                </Link>
 
                 <LetsCook
                   serves_count={"4"}
@@ -423,7 +448,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   blurb={"Tasty and simple homemade falafels."}
                 />
 
-                <div className="ad_horizontal_2_parent content_spacing_top_2">
+                <div className="ad_horizontal_2_parent hide_on_mobile content_spacing_top_2">
                   <h6 className="ad_text_1">ADVERTISEMENT</h6>
                   <div className="ad_horizontal_2"></div>
                 </div>
@@ -508,7 +533,7 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                   postsSet1_categoryID={postsSet1_categoryID}
                 />
 
-                <div className="ad_horizontal_2_parent">
+                <div className="ad_horizontal_2_parent hide_on_mobile">
                   <h6 className="ad_text_1">ADVERTISEMENT</h6>
                   <div className="ad_horizontal_2"></div>
                 </div>

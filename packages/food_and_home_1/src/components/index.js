@@ -81,7 +81,7 @@ const Root = ({ state }) => {
         {/* REACT-BOOTSTART-CDN END */}
         {/* FONT DEFINITIONS START */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin={true} />
         <link
           href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,900&family=Ms+Madi&family=Noto+Sans:wght@400;500&display=swap"
           rel="stylesheet"

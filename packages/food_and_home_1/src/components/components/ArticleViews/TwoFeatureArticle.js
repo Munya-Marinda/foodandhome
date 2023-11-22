@@ -31,7 +31,7 @@ const TwoFeatureArticle = ({
         </div>
       </Link>
 
-      <div className="post_block_3_posts_container_2 content_spacing_bottom_2">
+      <div className="post_block_4_posts_container_2 content_spacing_bottom_2">
         {postsSet1 !== null ? (
           <>
             {postsSet1 !== false ? (

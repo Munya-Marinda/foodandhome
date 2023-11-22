@@ -21,19 +21,21 @@ const Footer = ({ menu, _toggledleSubmitYourContentModal }) => {
         <div className="footer_container_1">
           <div className="footer_subToday_container_1">
             <span>Subscribe Today</span>
-            <div className="subscribe_to_newsletter_checkbox_parent">
-              <div className="subscribe_to_newsletter">
-                <input name="subscribe_to_newsletter" type="checkbox" />
-                <label>Newsletter</label>
+            <div style={{ width: "75%" }}>
+              <div className="subscribe_to_newsletter_checkbox_parent">
+                <div className="subscribe_to_newsletter">
+                  <input name="subscribe_to_newsletter" type="checkbox" />
+                  <label>Newsletter</label>
+                </div>
+                <div className="subscribe_to_promomailer">
+                  <input name="subscribe_to_promomailer" type="checkbox" />
+                  <label>Promotional Mailer</label>
+                </div>
               </div>
-              <div className="subscribe_to_promomailer">
-                <input name="subscribe_to_promomailer" type="checkbox" />
-                <label>Promotional Mailer</label>
+              <div className="footer_enterEmail_container_2">
+                <input type="text" placeholder="Your Email" />
+                <button>Subscribe</button>
               </div>
-            </div>
-            <div className="footer_enterEmail_container_2">
-              <input type="text" placeholder="Your Email" />
-              <button>Subscribe</button>
             </div>
           </div>
           <SocialMediaIcons_color />

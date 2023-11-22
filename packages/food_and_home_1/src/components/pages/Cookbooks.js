@@ -99,19 +99,20 @@ const Cookbooks = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
         <div className="post_block_1_parent_2">
           <div className="post_block_1_container_1">
             <div className="post_block_2_header_container_1">
-              <div className="post_block_2_header_parent_1">
-                <span className="post_block_2_header_1">Cookbooks</span>
-                <div className="post_block_2_headerLinks_parent_1">
-                  <Link
-                    link="/restaurants/"
-                    className="post_block_2_headerLink_1"
-                  >
+              <Link
+                link="/restaurants/"
+                className="post_block_2_headerLink_1"
+                style={{ width: "100%" }}
+              >
+                <div className="post_block_2_header_parent_1 content_spacing_bottom_3">
+                  <span className="post_block_2_header_1">Cookbooks</span>
+                  <div className="post_block_2_headerLinks_parent_1">
                     <span className="magazine_topNews_icon_2">
-                      <FaGreaterThan />
+                      <img src="https://ambassador.daddysdeals.co.za/features/foodandhome-assets/arrow-greater-than-2.svg" />
                     </span>
-                  </Link>
+                  </div>
                 </div>
-              </div>
+              </Link>
 
               {postsSet1 !== null ? (
                 <>

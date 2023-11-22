@@ -6,7 +6,15 @@ font-family: 'Noto Sans', sans-serif;
 
 /* VARIABLES */
 :root {
-  --maxContentWidth: 945px;
+  --maxContentWidth: 1180px;
+  --maxSideBarWidth: 300px;
+  --post_block_2_header_parent_1_width: 861.072px;
+  --imageWidthRatio: calc(450.996px / 284.004px);
+  --fullImageWidth: var(--post_block_2_header_parent_1_width);
+  --fullImageHeight: calc(
+    var(--imageWidthRatio) * var(--post_block_2_header_parent_1_width)
+  );
+  /*  */
   /* COLORS */
   /* --lime_color: #911c12ff; */
   --lime_color: #b5cf37ff;
@@ -23,36 +31,18 @@ font-family: 'Noto Sans', sans-serif;
   --ad_horizontal_height_2: 76px;
   --ad_vertical_width_1: 174px;
   --ad_vertical_height_1: 696px;
-  --ad_vertical_width_2: 267px;
+  --ad_vertical_width_2: 300px;
   --ad_vertical_height_2: 533.113px;
-  --ad_square_width_1: 267px;
-  --ad_square_height_1: 222.648px;
-  --ad_rectangle_width_1: 267px;
+  --ad_square_width_1: 300px;
+  --ad_square_height_1: 300px;
+  --ad_rectangle_width_1: 300px;
   --ad_rectangle_height_1: 600px;
   --ad_gray_1: rgb(232, 233, 234);
 
-  /* MALICOUS */
-  /*
-  --content_spacing_top_1: 70px;
-  --content_spacing_top_2: 35px;
-  --content_spacing_top_3: 20px;
-  --content_spacing_bottom_1: 70px;
-  --content_spacing_bottom_2: 35px;
-  --post_block_1_featureImg_1_width: 437px;
-  --post_block_1_featureImg_1_height: 593px;
-  --post_block_2_header_parent_1_width: 721px;
-  --post_block_2_featureImg_1_width: 324px;
-  --post_block_2_featureImg_1_height: 440px;
-  --post_block_2_postImg_2_width: 135px;
-  --post_block_2_postImg_2_height: 176.844px;
-  --post_block_3_postImg_1_width: 208px;
-  --post_block_3_postImg_1_height: 268px;
-  --post_block_3_postImg_2_width: 90px;
-  --post_block_3_postImg_2_height: 120px;
-  --videos_previewImg_1_width: 301px;
-  --videos_previewImg_1_height: 184px;
-  --full_screen_categories_width_height: calc(125vw / 7);
+  /* 
+  MALICOUS 
   */
+
   --content_spacing_top_1: 70px;
   --content_spacing_top_2: 39px;
   --content_spacing_top_3: 15px;
@@ -61,19 +51,23 @@ font-family: 'Noto Sans', sans-serif;
   --content_spacing_bottom_3: 15px;
   --profiles_post_block_4_postImg_2_width: 410px;
   --profiles_post_block_4_postImg_2_height: 258px;
-  --post_block_4_postImg_2_width: 324px;
-  --post_block_4_postImg_2_height: 203.824px;
-  --post_block_1_featureImg_1_width: 632.189px;
-  --post_block_1_featureImg_1_height: 397.701px;
-  --post_block_2_header_parent_1_width: 661.01px;
-  --post_block_2_featureImg_1_width: 324px;
-  --post_block_2_featureImg_1_height: 214.6px;
+  --cookbook_carousel_image_2_width: calc(
+    var(--post_block_2_header_parent_1_width) / 3.2
+  );
+  --post_block_4_postImg_2_width: 420.581px;
+  --post_block_4_postImg_2_height: 264.85px;
+  --post_block_1_featureImg_1_width: 788.254px;
+  --post_block_1_featureImg_1_height: 498.873px;
+  --post_block_1_featureImgs_1_width: 371.484px;
+  --post_block_1_featureImgs_1_height: 233.244px;
+  --post_block_2_featureImg_1_width: calc(var(--fullImageWidth) / 2.05);
+  --post_block_2_featureImg_1_height: calc(var(--fullImageHeight) / 2.05);
   --post_block_2_postImg_2_width: 239.728px;
-  --post_block_2_postImg_2_height: 137.57px;
-  --post_block_3_postImg_1_width: 208px;
-  --post_block_3_postImg_1_height: 128px;
+  --post_block_2_postImg_2_height: 151px;
+  --post_block_3_postImg_1_width: 274.583px;
   --post_block_3_postImg_2_width: 90px;
   --post_block_3_postImg_2_height: 56.618px;
+  --recipes_youll_love_img_1_width: 180px;
   --videos_previewImg_1_width: 301px;
   --videos_previewImg_1_height: 184px;
   --full_screen_categories_width_height: calc(125vw / 7);
@@ -219,10 +213,10 @@ body {
 .topbar_container_1 {
   width: 100%;
   display: flex;
-  max-width: var(--maxContentWidth);
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+  max-width: var(--maxContentWidth);
 }
 
 .topbar_date_weather_parent_1 {
@@ -263,19 +257,19 @@ body {
 }
 
 .topbar_socialLinks_parent_1 > a {
-  padding: 4px 5px 1px 5px;
-  border-radius: 100px;
-  margin-right: 10px;
   color: black;
   font-size: 11px;
+  margin-right: 10px;
+  border-radius: 100px;
+  padding: 4px 5px 1px 5px;
 }
 
 .topbar_socialLinks_parent_2 > a {
-  padding: 5px 5px 2px 5px;
-  border-radius: 100px;
-  margin-right: 5px;
   color: white;
   font-size: 10px;
+  margin-right: 5px;
+  border-radius: 100px;
+  padding: 5px 5px 2px 5px;
 }
 
 .social_icon_parent_1 {
@@ -343,6 +337,11 @@ body {
 
 .submitYourContent_iframe_parent_1 {
   width: 60vw !important;
+}
+
+.submit_your_recipe_banner_img_2,
+.submit_your_recipe_banner_img_1 {
+  width: calc(var(--post_block_2_header_parent_1_width) / 1.1);
 }
 /* 
 //
@@ -627,7 +626,7 @@ CAROUSEL
 
 .header_carousel_image_1 {
   width: 93px !important;
-  height: 56.674px !important;
+  height: 58.56px !important;
 }
 
 .header_carousel_text_parent_1 {
@@ -846,7 +845,7 @@ HOME POST BLOCK 1
   display: flex;
   align-items: flex-start;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .post_block_1_parent_2 {
@@ -859,7 +858,7 @@ HOME POST BLOCK 1
 }
 
 .post_block_1_container_1 {
-  width: 100%;
+  width: var(--maxContentWidth);
   max-width: var(--maxContentWidth);
   display: flex;
   align-items: flex-start;
@@ -970,8 +969,8 @@ HOME POST BLOCK 1
 }
 
 .post_block_1_featureImgs_1 {
-  width: 294.672px;
-  height: 185.374px;
+  width: var(--post_block_1_featureImgs_1_width);
+  height: var(--post_block_1_featureImgs_1_height);
 }
 
 .post_block_1_container_1_full_parent_1 {
@@ -1315,6 +1314,15 @@ HOME POST BLOCK 1
   justify-content: space-between;
 }
 
+.post_block_4_posts_container_2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
 .post_block_2_featureImg_1 {
   width: var(--post_block_2_featureImg_1_width);
   height: var(--post_block_2_featureImg_1_height);
@@ -1403,7 +1411,7 @@ HOME POST BLOCK 2 - RIGHT BAR
 .post_block_2_right_bar_parent_1 {
   width: 100%;
   display: flex;
-  max-width: 268.816px;
+  max-width: var(--maxSideBarWidth);
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
@@ -1416,8 +1424,7 @@ HOME POST BLOCK 2 - RIGHT BAR
 }
 
 .magazine_preview_img_1 {
-  width: 268.816px;
-  height: 321px;
+  width: var(--maxSideBarWidth);
 }
 
 .magazine_preview_btn_parent_1 {
@@ -1902,6 +1909,10 @@ VIDEOS
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.subscribe_to_newsletter_checkbox_parent > div {
+  margin-right: 15px;
 }
 
 .subscribe_to_newsletter > input,
@@ -2738,7 +2749,7 @@ COOK BOOKS - CAROUSEL
 }
 
 .cookbook_carousel_image_2 {
-  width: 212px;
+  width: 100%;
 }
 
 .cookbook_carousel_text_parent_1 {
@@ -2746,14 +2757,18 @@ COOK BOOKS - CAROUSEL
 }
 
 .cookbook_carousel_item_container_2 {
-  width: 212px;
+  width: var(--cookbook_carousel_image_2_width);
   background-color: white;
 }
 
 .cookbook_carousel_image_div_2,
 .cookbook_carousel_image_div_2_overlay {
-  width: 212px;
+  width: var(--cookbook_carousel_image_2_width);
   height: 260px;
+}
+
+.cookbook_carousel_image_div_2_overlay {
+  background-color: white;
 }
 
 .cookbook_carousel_image_1 {
@@ -2764,7 +2779,7 @@ COOK BOOKS - CAROUSEL
 
 .cookbook_carousel_image_div_1,
 .cookbook_carousel_image_div_1_overlay {
-  width: 220px;
+  width: 100%;
   height: 260px;
 }
 
@@ -2781,6 +2796,8 @@ COOK BOOKS - CAROUSEL
   background-color: white;
   background-position: center;
   background-repeat: no-repeat;
+  justify-content: center;
+  overflow: hidden;
   /*  */
   display: flex;
   align-items: center;
@@ -2907,7 +2924,7 @@ COOK BOOKS - CAROUSEL
 }
 
 .recipes_youll_love_img_1 {
-  width: 130px;
+  width: var(--recipes_youll_love_img_1_width);
 }
 
 .recipes_youll_love_text_1 {
@@ -2919,7 +2936,7 @@ COOK BOOKS - CAROUSEL
 
 .recipes_youll_love_header_1 {
   color: black;
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 900;
   margin-left: 10px;
   margin-right: 10px;
@@ -3104,7 +3121,7 @@ COOK BOOKS - CAROUSEL
 }
 
 .profiles_post_block_postImg_2 {
-  height: 360px;
+  height: var(----post_block_3_postImg_2_height);
 }
 
 .profiles_post_block_text_parent_2 {
@@ -3127,7 +3144,7 @@ COOK BOOKS - CAROUSEL
 }
 
 .profiles_post_block_text_container_2 > h1 {
-  font-size: 45px; 
+  font-size: 45px;
   margin-bottom: 30px;
   font-family: "Ms Madi", cursive;
 }
@@ -3136,7 +3153,7 @@ COOK BOOKS - CAROUSEL
   margin-top: 15px;
 }
 
-/* 
+/*
 //
 //
 //
@@ -3442,12 +3459,6 @@ INFINITE AUTO SLIDER
 MALICOUS
 */
 
-/* .wp-embedded-content {
-  max-width: fit-content;
-  height: 550px !important;
-  position: static !important;
-} */
-
 svg {
   vertical-align: unset !important;
 }
@@ -3633,69 +3644,294 @@ svg {
 Media queries
 */
 
-@media only screen and (max-width: 820px) {
-  .single_view_content_parent_1 {
-    max-width: 100vw;
+@media (max-width: 999px) {
+  .cookbook_carousel_button_next_parent_1 {
+    transform: translateX(-20px);
   }
 
-  .footer_container_2_1_links_parent {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-    justify-content: space-between;
+  .cookbook_carousel_button_prev_parent_1 {
+    transform: translateX(20px);
   }
 
-  .footer_container_2_1_1 {
-    width: 45%;
+  /* FOOTER */
+  .footer_container_1 {
+    justify-content: flex-start;
   }
 
-  .wide_dropdown_nav_container_1 {
+  .footer_subToday_container_1 {
+    flex-direction: column;
+    align-items: flex-start;
     width: fit-content;
   }
 
-  .wide_dropdown_links_span_1 {
-    white-space: nowrap;
-  }
-
-  .wide_dropdown_links_parent_1 {
-    width: 100vw;
-    padding: 0px 15px;
-    overflow-x: scroll;
-  }
-
-  .wide_dropdown_nav_header_1 {
-    padding: 0px 15px;
+  .subscribe_to_newsletter_checkbox_parent {
+    margin-right: 20px;
   }
 }
-/* 
 
-
-
-*/
-@media only screen and (max-width: 500px) {
-  :root {
-    --post_block_2_postImg_2_width: 35vw;
-    --post_block_2_postImg_2_height: calc(35vw * calc(218px / 125px));
-    --post_block_2_featureImg_1_width: 100vw;
-    --post_block_2_featureImg_1_height: calc(
-      100vw * calc(268.816px / 178.047px)
-    );
-    --full_screen_categories_width_height: 80vw;
-
-    /* --post_block_2_featureImg_1_width: 268.816px;
-  --post_block_2_featureImg_1_height: 178.047px; */
-  }
-
-  .categories_slider_parent_1 {
-    display: block;
-  }
-
-  .full_screen_categories_parent_1 {
+@media only screen and (max-width: 1305px) {
+  .header_carousel_header_parent_1,
+  .ad_vertical_1 {
     display: none;
   }
 
-  .post_block_2_header_1 {
-    font-size: 32px;
+  .post_block_1_parent_1 {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 1585px) and (min-width: 1301px) {
+  :root {
+    --maxContentWidth: 945px;
+    --post_block_2_header_parent_1_width: 630.277px;
+    /*  */
+    --fullImageWidth: var(--post_block_2_header_parent_1_width);
+    --fullImageHeight: calc(
+      var(--imageWidthRatio) * var(--post_block_2_header_parent_1_width)
+    );
+    /*  */
+    --profiles_post_block_4_postImg_2_width: 410px;
+    --profiles_post_block_4_postImg_2_height: 258px;
+    --post_block_4_postImg_2_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_4_postImg_2_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_1_featureImg_1_width: 632.189px;
+    --post_block_1_featureImg_1_height: 397.701px;
+    --post_block_1_featureImgs_1_width: 294.672px;
+    --post_block_1_featureImgs_1_height: 185.374px;
+    --post_block_2_featureImg_1_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_2_featureImg_1_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_2_postImg_2_width: 239.728px;
+    --post_block_2_postImg_2_height: 151px;
+    --post_block_3_postImg_1_width: calc(var(--fullImageWidth) / 3.1);
+    --post_block_3_postImg_1_height: calc(var(--fullImageHeight) / 3.1);
+    --post_block_3_postImg_2_width: 90px;
+    --post_block_3_postImg_2_height: 56.68px;
+    --recipes_youll_love_img_1_width: 130px;
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
+    --full_screen_categories_width_height: calc(125vw / 7);
+  }
+}
+
+@media only screen and (max-width: 1235px) {
+  :root {
+    --maxContentWidth: 977px;
+    --post_block_2_header_parent_1_width: 661.01px;
+    /*  */
+    --fullImageWidth: var(--post_block_2_header_parent_1_width);
+    --fullImageHeight: calc(
+      var(--imageWidthRatio) * var(--post_block_2_header_parent_1_width)
+    );
+    /*  */
+    --profiles_post_block_4_postImg_2_width: 410px;
+    --profiles_post_block_4_postImg_2_height: 258px;
+    --post_block_4_postImg_2_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_4_postImg_2_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_1_featureImg_1_width: 632.189px;
+    --post_block_1_featureImg_1_height: 397.701px;
+    --post_block_1_featureImgs_1_width: 294.672px;
+    --post_block_1_featureImgs_1_height: 185.374px;
+    --post_block_2_featureImg_1_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_2_featureImg_1_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_2_postImg_2_width: 239.728px;
+    --post_block_2_postImg_2_height: 151px;
+    --post_block_3_postImg_1_width: calc(var(--fullImageWidth) / 3.1);
+    --post_block_3_postImg_1_height: calc(var(--fullImageHeight) / 3.1);
+    --post_block_3_postImg_2_width: 90px;
+    --post_block_3_postImg_2_height: 56.68px;
+    --recipes_youll_love_img_1_width: 130px;
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
+    --full_screen_categories_width_height: calc(125vw / 7);
+  }
+
+  .post_block_1_container_1 {
+    width: var(--maxContentWidth);
+  }
+}
+
+@media only screen and (max-width: 999px) {
+  :root {
+    --maxContentWidth: 95vw;
+    /*  */
+    --fullImageWidth: var(--maxContentWidth);
+    --fullImageHeight: calc(var(--imageWidthRatio) * var(--maxContentWidth));
+    /*  */
+    --profiles_post_block_4_postImg_2_width: calc(var(--fullImageWidth) / 2.05);
+    --profiles_post_block_4_postImg_2_height: calc(
+      var(--fullImageHeight) / 2.05
+    );
+    --post_block_4_postImg_2_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_4_postImg_2_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_1_featureImg_1_width: var(--fullImageWidth);
+    --post_block_1_featureImg_1_height: var(--fullImageHeight);
+    --post_block_1_featureImgs_1_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_1_featureImgs_1_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_2_header_parent_1_width: var(--maxContentWidth);
+    --post_block_2_featureImg_1_width: calc(var(--fullImageWidth) / 2.05);
+    --post_block_2_featureImg_1_height: calc(var(--fullImageHeight) / 2.05);
+    --post_block_2_postImg_2_width: 239.728px;
+    --post_block_2_postImg_2_height: 151px;
+    --post_block_3_postImg_1_width: calc(var(--fullImageWidth) / 3.1);
+    --post_block_3_postImg_1_height: calc(var(--fullImageHeight) / 3.1);
+    --post_block_3_postImg_2_width: 90px;
+    --post_block_3_postImg_2_height: 56.68px;
+    --recipes_youll_love_img_1_width: calc(var(--maxContentWidth) / 7);
+    --videos_previewImg_1_width: 301px;
+    --videos_previewImg_1_height: 184px;
+    --full_screen_categories_width_height: calc(125vw / 7);
+  }
+
+  .post_block_2_right_bar_parent_1 {
+    display: none;
+  }
+
+  .post_block_1_container_1 {
+    width: var(--maxContentWidth);
+  }
+
+  .post_block_1_container_1_full_2 {
+    flex-direction: column;
+  }
+
+  .post_block_1_featureImgs_parent_1 {
+    align-items: center;
+    flex-direction: row;
+    height: fit-content;
+    width: var(--maxContentWidth);
+    margin-top: var(--content_spacing_top_2);
+  }
+
+  .profiles_post_block_parent_1 {
+    width: 100%;
+    padding: 0px 0px;
+    transform: translateX(0px);
+    justify-content: flex-start;
+  }
+
+  .profiles_post_block_text_parent_3 {
+    margin-left: 20px;
+    padding: 20px 10px 20px 0px;
+  }
+
+  .profiles_post_block_postImg_1_div {
+    transform: translate(0%);
+  }
+
+  /*
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  MALICIOUS
+   */
+  .hide_on_tablet {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    --maxContentWidth: 100vw;
+    --maxSideBarWidth: 100vw;
+    --post_block_1_featureImg_1_width: 100vw;
+    --post_block_1_featureImg_1_height: inherit;
+    --profiles_post_block_4_postImg_2_width: 100vw;
+    --profiles_post_block_4_postImg_2_height: inherit;
+  }
+
+  /* ADVERT */
+  .ad_horizontal_1 {
+    height: calc(var(--ad_horizontal_height_1) * 0.6);
+    width: calc(var(--ad_horizontal_width_1) * 0.4);
+  }
+
+  /* NAVBAR */
+  .nav_search_parent_1,
+  .submitYourContent_parent_1,
+  .nav_wide_links_parent_1 {
+    display: none;
+  }
+
+  .nav_parent_1 {
+    background-color: black;
+    padding: 10px 10px;
+  }
+
+  /* POST BLOCK 1 */
+  .post_block_1_container_1_full_2 {
+    flex-direction: column;
+  }
+
+  /* SUBMIT YOUR RECIPE */
+  .submit_your_recipe_banner_img_2,
+  .submit_your_recipe_banner_img_1 {
+    width: 95vw;
+  }
+
+  .recipes_youll_love_preview_parent_1 {
+    width: 100vw;
+  }
+
+  .profiles_post_block_postImg_1_div {
+    transform: translateX(0px);
+  }
+
+  .profiles_post_block_postImg_1 {
+    width: 100vw;
+    height: auto;
+  }
+
+  .post_block_2_postImg_2 {
+    width: 150px;
+    height: auto;
+  }
+
+  .post_block_2_post_container_1 {
+    margin-bottom: 25px;
+  }
+
+  .post_block_2_postText_1 {
+    margin-left: 15px;
+  }
+
+  .profiles_post_block_parent_1,
+  .post_block_1_container_1 {
+    flex-direction: column;
+  }
+
+  .profiles_post_block_parent_1 {
+    width: 100%;
+    padding: 0px 0px;
+    transform: translateX(0px);
+  }
+
+  .cook_books_header_1 {
+    width: 50vw;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .cook_books_header_2 {
+    line-height: 33px;
+    text-align: center;
+  }
+
+  .magazine_preview_img_1 {
+    width: calc(var(--maxSideBarWidth) * 0.75);
+    height: auto;
   }
 
   .post_block_1_parent_1 {
@@ -3705,468 +3941,30 @@ Media queries
     justify-content: center;
   }
 
-  .post_block_1_parent_2 {
-    width: 100%;
-    flex-direction: column;
-  }
-
-  .post_block_1_container_1,
-  .post_block_2_posts_container_1 {
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .post_block_2_posts_container_1 {
-    margin: 0px;
-  }
-
-  .post_block_2_posts_container_2,
-  .post_block_3_posts_container_1 {
-    padding: 0px 10px;
-  }
-
-  .post_block_3_posts_container_1,
-  .post_block_2_posts_container_1 > div,
-  .post_block_1_featureImgs_parent_1 {
-    display: flex;
-    height: var(--post_block_1_featureImg_1_height);
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .nav_parent_1,
-  .nav_parent_2,
-  .topbar_parent_1,
-  .footer_container_1,
   /*
-   .ad_horizontal_2_parent,
-  .ad_horizontal_parent_1,
-  .full_screen_categories_parent_1,
-  */
-  .magazine_preview_parent_1, 
-  .post_block_2_right_bar_parent_1,
-  .header_carousel_header_parent_1 {
-    display: none;
-  }
-
-  .post_block_1_featureImg_1 {
-    width: 100vw;
-    height: 100%;
-    min-height: 150px;
-  }
-
-  .post_block_2_post_container_1 {
-    justify-content: space-between;
-  }
-
-  .post_block_2_postText_content_parent_1,
-  .post_block_3_postText_1,
-  .post_block_2_postText_1 {
-    width: 55vw;
-  }
-
-  .post_block_2_postImg_2 {
-    width: var(--post_block_2_postImg_2_width);
-    height: var(--post_block_2_postImg_2_height);
-  }
-
-  .post_block_3_featuredPostText_parent_1 {
-    max-width: 100%;
-    margin-top: 20px;
-    padding: 0px 10px;
-  }
-
-  .min_height_200px,
-  .post_block_2_posts_container_1,
-  .post_block_1_featureImg_container_1,
-  .post_block_1_featureImgs_container_1 {
-    min-height: 200px;
-  }
-
-  .post_block_2_header_parent_1 {
-    width: 94vw;
-  }
-
-  .post_block_3_post_container_1 {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 0px 0px 15px 0px;
-    justify-content: space-between;
-  }
-
-  .post_block_3_postImg_1 {
-    margin-bottom: 0px;
-    width: var(--post_block_2_postImg_2_width);
-    height: var(--post_block_2_postImg_2_height);
-  }
-
-  .win_featuredPostText_parent_1 > h1,
-  .post_block_3_featuredPostText_parent_1 > p,
-  .post_block_3_featuredPostText_parent_1 > div,
-  .post_block_3_featuredPostText_parent_1 > a > h1 {
-    padding: 0px;
-  }
-
-  .post_block_1_featureImgs_container_1 {
-    margin-top: 20px;
-  }
-
-  .post_block_1_featureImgs_1 {
-    width: 94vw;
-    height: 100%;
-  }
-
-  /* 
   //
   //
   //
   //
   //
   //
-  FULL_WIDTH_POST
-  */
-  .full_width_post_text_parent_1 {
-    width: 100%;
-    display: flex;
-    max-width: 100%;
-    padding: 0px;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: transparent;
-    background-image: linear-gradient(0deg, rgb(0 0 0) 0%, rgb(0 0 0 / 0%) 55%);
-  }
-
-  .playVideo_parent_1 {
-    display: none !important;
-  }
-
-  /* 
   //
   //
   //
   //
   //
   //
-  ADVERTS
-  */
-
-  .ad_horizontal_1 {
-    height: calc(var(--ad_horizontal_height_1) * 0.6);
-    width: calc(var(--ad_horizontal_width_1) * 0.4);
-  }
-
-  .ad_horizontal_2 {
-    width: calc(var(--ad_horizontal_width_2) * 0.6);
-    height: calc(var(--ad_horizontal_height_2) * 0.8);
-  }
-
-  /* 
   //
   //
   //
   //
-  //
-  //
-  WIN PAGE
-  */
-  .win_posts_container_1 {
-    flex-direction: column;
-    max-width: 100vw;
-  }
-
-  .win_featuredPostText_parent_1 > h1 {
-    padding: 0px 25px 5px 25px;
-  }
-
-  .win_featuredPostText_parent_1 {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  /* 
-  //
-  //
-  //
-  //
-  //
-  //
-  PLACEHOLDERS
-  */
-
-  .placeholder_child_1_parent {
-    display: block;
-    margin-right: 10px;
-    width: 100%;
-  }
-
-  .placeholder_parent_1 {
-    flex-direction: column;
-    height: 250px !important;
-  }
-
-  .placeholder_child_1 {
-    height: 250px !important;
-  }
-
-  .placeholder_child_2_parent {
-    display: none;
-  }
-
-  .placeholder_child_4 {
-    height: 80px !important;
-  }
-  /* 
-  //
-  //
-  //
-  //
-  //
-  //
-  MOBILE NAV
-  */
-
-  .nav_mobile_logo_img_1 {
-    width: 150px;
-  }
-
-  .nav_mobile_parent_1 {
-    padding: 0px 0px 10px 0px;
-  }
-
-  .nav_mobile_header_parent_1 {
-    width: 100%;
-    padding: 10px 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav_mobile_parent_1,
-  .nav_mobile_header_parent_1 {
-    background-color: black;
-  }
-
-  .nav_mobile_toggle_1 {
-    z-index: 99;
-    padding: 5px 5px 0px 5px;
-  }
-
-  .nav_mobile_toggle_1 > svg {
-    color: white;
-  }
-
-  .nav_mobile_sub_menu_parent_1 {
-    padding: 0px 10px;
-  }
-
-  .accordion-body > a {
-    text-decoration: none;
-  }
-
-  .accordion-body {
-    background-color: black !important;
-  }
-
-  .accordion-button {
-    background-color: black !important;
-    border: 0px !important;
-    padding-top: 5px !important;
-    padding-bottom: 5px !important;
-  }
-
-  .accordion-button::after {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%236ea8fe'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-  }
-
-  .accordion-item {
-    border: 0px !important;
-  }
-
-  /* 
-  //
-  //
-  //
-  //
-  //
-  //
-  FULL SCREEN CATEGORIES
-  */
-  .full_screen_categories_container_2 > span {
-    font-size: 24px;
-  }
-
-  /* 
-  //
-  //
-  //
-  //
-  //
-  //
-  FOOTER
-  */
-  .footer_container_2_1_1 {
-    display: block;
-  }
-
-  .footer_container_2_1_1 {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .footer_container_2_1 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 40px 30px;
-    justify-content: space-between;
-    max-width: calc(var(--maxContentWidth) * 1.4);
-  }
-
-  /* 
-    //
-    //
-    //
-    //
-    //
-    //
-  SUBMIT YOUR CONTENT
-    */
-
-  .submitYourContent_modal_header_1 {
-    font-weight: 500;
-  }
-
-  .submitYourContent_iframe_parent_1 {
-    width: 100% !important;
-  }
-
-  .submit_your_recipe_banner_img_1 {
-    /* width: 100%; */
-    width: 660px;
-  }
-
-  /* 
-  //
-  //
-  //
-  //
-  //
-  //
-  MALICOUS
-  */
-
+  MALICIOUS
+   */
   .hide_on_mobile {
     display: none !important;
   }
 
-  .showMobileMenu {
-    display: block;
-  }
-
-  .hideMobileMenu {
-    display: none;
-  }
-
-  .content_spacing_top_1 {
-    margin-top: calc(var(--content_spacing_top_1) / 1.3);
-  }
-
-  .content_spacing_top_2 {
-    margin-top: calc(var(--content_spacing_top_2) / 1.3);
-  }
-
-  .content_spacing_bottom_1 {
-    margin-bottom: calc(var(--content_spacing_bottom_1) / 1.3);
-  }
-
-  .content_spacing_bottom_2 {
-    margin-bottom: calc(var(--content_spacing_bottom_2) / 1.3);
-  }
-
-  /* .wp-embedded-content {
-    max-width: 95vw;
-  } */
-
-  .height_250 {
-    min-height: 250px;
-  }
-
   .hide_on_desktop {
     display: block;
-  }
-}
-
-/* 
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-Media queries for content width and
-*/
-@media only screen and (max-width: 1305px) {
-  .header_carousel_header_parent_1,
-  .ad_vertical_1 {
-    display: none;
   }
 }

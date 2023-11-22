@@ -139,11 +139,7 @@ const Profiles = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                               </div>
                               <div className="profiles_post_block_text_parent_2">
                                 <div className="profiles_post_block_text_container_2">
-                                  <h1>
-                                    Foodie of the
-                                    <br />
-                                    month
-                                  </h1>
+                                  <h1>Foodie of the month</h1>
                                   <h2>Reuben Riffel</h2>
                                 </div>
                                 <button>LET'S TALK</button>

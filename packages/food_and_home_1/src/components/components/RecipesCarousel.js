@@ -156,7 +156,7 @@ const RecipesCarousel = () => {
         }
       }
     }
-  }, [_postsSet1]);
+  }, []);
   //
   //
   //
@@ -181,6 +181,7 @@ const RecipesCarousel = () => {
           />
           <h1 className="recipes_youll_love_header_1">
             Recipes
+            <br className="hide_on_desktop" />
             <span className="recipes_youll_love_header_2"> you'll love</span>
           </h1>
           <img

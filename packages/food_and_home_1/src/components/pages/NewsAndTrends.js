@@ -1162,8 +1162,7 @@ const NewsAndTrends = ({
                 </div>
 
                 <img
-                  width={"660px"}
-                  className="submit_your_recipe_banner_img_1 content_spacing_top_2"
+                  className="submit_your_recipe_banner_img_2 content_spacing_top_2"
                   src={
                     "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/submit-your-recipe-banner-0.png"
                   }

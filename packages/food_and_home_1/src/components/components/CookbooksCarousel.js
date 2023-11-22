@@ -91,6 +91,7 @@ const CookbooksCarousel = ({ WP_SiteUrl, _postsSet1, _title, _subTitle }) => {
                   {postsSet1.length !== 0 ? (
                     <>
                       <Carousel
+                        interval={null}
                         onSelect={handleSelect}
                         activeIndex={activeIndex}
                         prevIcon={<CustomPrevButton />}
