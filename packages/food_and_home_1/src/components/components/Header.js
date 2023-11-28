@@ -37,8 +37,10 @@ const Header = ({
   change_headerStickyContainerHeight,
 }) => {
   const maxCarouselItems = 4;
-  const postsSet1_categoryID = 25282;
+  //
+  const postsSet1_categoryID = 51;
   const [postsSet1, setPostsSet1] = useState(null);
+  //
   const [postsChuncksSet1, setPostsChuncksSet1] = useState(null);
   const [menuChildren, setmenuChildren] = useState(null);
   const [menuParentTitle, setmenuParentTitle] = useState(null);
@@ -66,21 +68,7 @@ const Header = ({
           setPostsSet1(false);
           return;
         }
-        const _postsData = await response.json();
-        const postsData = [
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-          _postsData[0],
-        ];
+        const postsData = await response.json();
 
         // Create an array to hold the chunks of posts
         const chunkSize = 4;
@@ -566,15 +554,11 @@ const Header = ({
                           ))}
                       </Carousel>
                     ) : (
-                      <div className="spinner_parent_0">
-                        <>False 2</>
-                      </div>
+                      <div className="spinner_parent_0"></div>
                     )}
                   </>
                 ) : (
-                  <div className="spinner_parent_0">
-                    <>False 1</>
-                  </div>
+                  <div className="spinner_parent_0"></div>
                 )}
               </>
             ) : (

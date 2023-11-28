@@ -2,18 +2,15 @@ import { useState, useEffect } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
 import FullWidthPost from "../components/FullWidthPost";
-import { FaGreaterThan, FaStar } from "react-icons/fa";
-import { Placeholder } from "react-bootstrap";
-import { CustomWPRestServicePostObject, FixInvalidLink } from "../js/main";
-import ArticleIcons from "../components/ArticleIcons";
-import CategoryDateText from "../components/CategoryDateText";
+import CookbooksArticleViews from "../components/ArticleViews/CookbooksArticleViews";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
 const Cookbooks = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const WP_SiteUrl = state.source.url;
   //
   const [adPositions, setAdPositions] = useState(false);
   //
-  const postsSet1_categoryID = 1005;
+  const postsSet1_categoryID = 55;
   const [postsSet1, setPostsSet1] = useState(null);
   //
   //
@@ -114,282 +111,39 @@ const Cookbooks = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 </div>
               </Link>
 
-              {postsSet1 !== null ? (
-                <>
-                  {postsSet1 !== false ? (
-                    <>
-                      {postsSet1.length !== 0 ? (
-                        <>
-                          <div className="cookbook_carousel_item_parent_2 content_spacing_top_3">
-                            {postsSet1.slice(0, 3).map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet1_categoryID
-                              );
-                              const customPost_slug = FixInvalidLink(
-                                customPost.slug
-                              );
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  key={index}
-                                  className="cookbook_carousel_item_container_2"
-                                >
-                                  <Link link={customPost_slug}>
-                                    <div
-                                      className="cookbook_carousel_image_div_2"
-                                      style={{
-                                        backgroundImage:
-                                          "url('https://ambassador.daddysdeals.co.za/features/foodandhome-assets/cookbooks-1/cookbook-3.png')",
-                                      }}
-                                    >
-                                      <img
-                                        alt="Image"
-                                        className="cookbook_carousel_image_2"
-                                        src={
-                                          "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/cookbooks-1/cookbook-3.png"
-                                        }
-                                      />
-                                      <div className="cookbook_carousel_image_div_2_overlay" />
-                                    </div>
-                                    <div className="cookbook_carousel_text_parent_1">
-                                      <h6
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </div>
-                                    <div className="cookbook_carousel_rating_parent_1">
-                                      <div className="cookbook_carousel_rating_container_1">
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                      </div>
-                                      <div className="cookbook_carousel_rating_container_2">
-                                        <span>(10 Reviews)</span>
-                                      </div>
-                                    </div>
-                                  </Link>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </>
-                      ) : (
-                        <div className="spinner_parent_0">
-                          <></>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_0">
-                      <></>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="cook_books_placeholder_parent_2 content_spacing_top_3">
-                  <Placeholder animation="glow">
-                    <Placeholder />
-                    <Placeholder />
-                    <Placeholder />
-                  </Placeholder>
-                </div>
-              )}
+              <CookbooksArticleViews
+                slice_end={6}
+                slice_start={0}
+                postsSet1={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet1_categoryID={postsSet1_categoryID}
+              />
 
               <div className="ad_horizontal_2_parent content_spacing_top_2">
                 <h6 className="ad_text_1">ADVERTISEMENT</h6>
                 <div className="ad_horizontal_2"></div>
               </div>
 
-              {postsSet1 !== null ? (
-                <>
-                  {postsSet1 !== false ? (
-                    <>
-                      {postsSet1.length !== 0 ? (
-                        <>
-                          <div className="cookbook_carousel_item_parent_2 content_spacing_top_2">
-                            {postsSet1.slice(3, 6).map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet1_categoryID
-                              );
-                              const customPost_slug = FixInvalidLink(
-                                customPost.slug
-                              );
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  key={index}
-                                  className="cookbook_carousel_item_container_2"
-                                >
-                                  <Link link={customPost_slug}>
-                                    <div
-                                      className="cookbook_carousel_image_div_2"
-                                      style={{
-                                        backgroundImage:
-                                          "url('https://ambassador.daddysdeals.co.za/features/foodandhome-assets/cookbooks-1/cookbook-3.png')",
-                                      }}
-                                    >
-                                      <img
-                                        alt="Image"
-                                        className="cookbook_carousel_image_2"
-                                        src={
-                                          "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/cookbooks-1/cookbook-3.png"
-                                        }
-                                      />
-                                      <div className="cookbook_carousel_image_div_2_overlay" />
-                                    </div>
-                                    <div className="cookbook_carousel_text_parent_1">
-                                      <h6
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </div>
-                                    <div className="cookbook_carousel_rating_parent_1">
-                                      <div className="cookbook_carousel_rating_container_1">
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                      </div>
-                                      <div className="cookbook_carousel_rating_container_2">
-                                        <span>(10 Reviews)</span>
-                                      </div>
-                                    </div>
-                                  </Link>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </>
-                      ) : (
-                        <div className="spinner_parent_0">
-                          <></>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_0">
-                      <></>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="cook_books_placeholder_parent_2 content_spacing_top_3">
-                  <Placeholder animation="glow">
-                    <Placeholder />
-                    <Placeholder />
-                    <Placeholder />
-                  </Placeholder>
-                </div>
-              )}
+              <CookbooksArticleViews
+                slice_end={12}
+                slice_start={6}
+                postsSet1={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet1_categoryID={postsSet1_categoryID}
+              />
 
               <div className="ad_horizontal_2_parent content_spacing_top_2">
                 <h6 className="ad_text_1">ADVERTISEMENT</h6>
                 <div className="ad_horizontal_2"></div>
               </div>
 
-              {postsSet1 !== null ? (
-                <>
-                  {postsSet1 !== false ? (
-                    <>
-                      {postsSet1.length !== 0 ? (
-                        <>
-                          <div className="cookbook_carousel_item_parent_2 content_spacing_top_2">
-                            {postsSet1.slice(3, 6).map((post, index) => {
-                              const customPost = CustomWPRestServicePostObject(
-                                WP_SiteUrl,
-                                post,
-                                postsSet1_categoryID
-                              );
-                              const customPost_slug = FixInvalidLink(
-                                customPost.slug
-                              );
-                              //
-                              //
-                              //
-                              //
-                              return (
-                                <div
-                                  key={index}
-                                  className="cookbook_carousel_item_container_2"
-                                >
-                                  <Link link={customPost_slug}>
-                                    <div
-                                      className="cookbook_carousel_image_div_2"
-                                      style={{
-                                        backgroundImage:
-                                          "url('https://ambassador.daddysdeals.co.za/features/foodandhome-assets/cookbooks-1/cookbook-3.png')",
-                                      }}
-                                    >
-                                      <img
-                                        alt="Image"
-                                        className="cookbook_carousel_image_2"
-                                        src={
-                                          "https://ambassador.daddysdeals.co.za/features/foodandhome-assets/cookbooks-1/cookbook-3.png"
-                                        }
-                                      />
-                                      <div className="cookbook_carousel_image_div_2_overlay" />
-                                    </div>
-                                    <div className="cookbook_carousel_text_parent_1">
-                                      <h6
-                                        dangerouslySetInnerHTML={
-                                          customPost.title
-                                        }
-                                      />
-                                    </div>
-                                    <div className="cookbook_carousel_rating_parent_1">
-                                      <div className="cookbook_carousel_rating_container_1">
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                        <FaStar size={15} />
-                                      </div>
-                                      <div className="cookbook_carousel_rating_container_2">
-                                        <span>(10 Reviews)</span>
-                                      </div>
-                                    </div>
-                                  </Link>
-                                </div>
-                              );
-                            })}
-                          </div>
-                        </>
-                      ) : (
-                        <div className="spinner_parent_0">
-                          <></>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="spinner_parent_0">
-                      <></>
-                    </div>
-                  )}
-                </>
-              ) : (
-                <div className="cook_books_placeholder_parent_2 content_spacing_top_3">
-                  <Placeholder animation="glow">
-                    <Placeholder />
-                    <Placeholder />
-                    <Placeholder />
-                  </Placeholder>
-                </div>
-              )}
+              <CookbooksArticleViews
+                slice_end={18}
+                slice_start={12}
+                postsSet1={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet1_categoryID={postsSet1_categoryID}
+              />
 
               <div className="next_article_page_parent_1 content_spacing_top_2">
                 <button className="next_article_button_1">PREVIOUS</button>
@@ -401,104 +155,16 @@ const Cookbooks = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
               <div className="ad_square_1">
                 <p>[AD]</p>
               </div>
-              <div className="magazine_topNews_parent_1">
-                <Link link="#top-news">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Heading 1
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
-                    </span>
-                  </div>
-                </Link>
 
-                <div className="topGuides_parent_1">
-                  {postsSet1 !== null ? (
-                    <>
-                      {postsSet1 !== false ? (
-                        <>
-                          {postsSet1.length !== 0 ? (
-                            <>
-                              {postsSet1.slice(0, 4)?.map((post, index) => {
-                                const customPost =
-                                  CustomWPRestServicePostObject(
-                                    WP_SiteUrl,
-                                    post,
-                                    postsSet1_categoryID
-                                  );
-                                //
-                                //
-                                //
-                                //
-                                //
-                                return (
-                                  <div
-                                    className="topGuides_container_1"
-                                    key={index}
-                                  >
-                                    <div className="topGuides_postImg_1">
-                                      <img
-                                        alt=""
-                                        src={customPost.imgUrl}
-                                        className="post_block_3_postImg_2"
-                                      />
-                                    </div>
-                                    <div className="topGuides_textContainer_1">
-                                      {/* <CategoryDateText_2
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      /> */}
-                                      <Link link={customPost.slug}>
-                                        <h6
-                                          dangerouslySetInnerHTML={
-                                            customPost.title
-                                          }
-                                        />
-                                      </Link>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </>
-                          ) : (
-                            <div className="spinner_parent_1">
-                              <h1>NO NEW POSTS FOUND</h1>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>FAILED TO FETCH POSTS</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="topGuides_parent_1">
-                      {["", "", "", ""].map((m, n) => (
-                        <div
-                          className="placeholder_child_8_parent_parent"
-                          key={n}
-                        >
-                          <Placeholder animation="glow" className="">
-                            <Placeholder className="placeholder_child_8_1" />
-                          </Placeholder>
-                          <Placeholder animation="glow" className="">
-                            <Placeholder
-                              xs={10}
-                              className="placeholder_child_8_2"
-                            />
-                            <Placeholder
-                              xs={5}
-                              className="placeholder_child_8_2"
-                            />
-                          </Placeholder>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+              <SidebarListingWithImages
+                title={"Top Cookbooks"}
+                link={"/news-and-trends/cookbooks/"}
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryTitle={"COOKBOOKS"}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
+
               <div className="ad_rectangle_1">
                 <p>[AD]</p>
               </div>

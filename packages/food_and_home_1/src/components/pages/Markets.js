@@ -15,7 +15,7 @@ const Markets = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   //
   const [adPositions, setAdPositions] = useState(false);
   //
-  const postsSet1_categoryID = 25282;
+  const postsSet1_categoryID = 2584;
   const [postsSet1, setPostsSet1] = useState(null);
   //
   //
@@ -35,17 +35,7 @@ const Markets = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           return;
         }
         const postsData = await response.json();
-        setPostsSet1([
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-        ]);
+        setPostsSet1(postsData);
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet1(false);

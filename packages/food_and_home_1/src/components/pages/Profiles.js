@@ -7,13 +7,14 @@ import { Placeholder } from "react-bootstrap";
 import { CustomWPRestServicePostObject } from "../js/main";
 import ArticleIcons from "../components/ArticleIcons";
 import CategoryDateText from "../components/CategoryDateText";
+import SidebarListingWithImages from "../components/sidebars/SidebarListingWithImages";
 
 const Profiles = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const WP_SiteUrl = state.source.url;
   //
   const [adPositions, setAdPositions] = useState(false);
   //
-  const postsSet1_categoryID = 25282;
+  const postsSet1_categoryID = 53;
   const [postsSet1, setPostsSet1] = useState(null);
   //
   //
@@ -33,17 +34,7 @@ const Profiles = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           return;
         }
         const postsData = await response.json();
-        setPostsSet1([
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-        ]);
+        setPostsSet1(postsData);
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet1(false);
@@ -481,104 +472,16 @@ const Profiles = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
               <div className="ad_square_1">
                 <p>[AD]</p>
               </div>
-              <div className="magazine_topNews_parent_1">
-                <Link link="#top-news">
-                  <div className="magazine_topNews_header_1">
-                    <span className="magazine_topNews_headerText_1">
-                      Heading 1
-                    </span>
-                    <span className="magazine_topNews_icon_1">
-                      <FaGreaterThan />
-                    </span>
-                  </div>
-                </Link>
 
-                <div className="topGuides_parent_1">
-                  {postsSet1 !== null ? (
-                    <>
-                      {postsSet1 !== false ? (
-                        <>
-                          {postsSet1.length !== 0 ? (
-                            <>
-                              {postsSet1.slice(0, 4)?.map((post, index) => {
-                                const customPost =
-                                  CustomWPRestServicePostObject(
-                                    WP_SiteUrl,
-                                    post,
-                                    postsSet1_categoryID
-                                  );
-                                //
-                                //
-                                //
-                                //
-                                //
-                                return (
-                                  <div
-                                    className="topGuides_container_1"
-                                    key={index}
-                                  >
-                                    <div className="topGuides_postImg_1">
-                                      <img
-                                        alt=""
-                                        src={customPost.imgUrl}
-                                        className="post_block_3_postImg_2"
-                                      />
-                                    </div>
-                                    <div className="topGuides_textContainer_1">
-                                      {/* <CategoryDateText_2
-                                        categoryText={customPost.categoryText}
-                                        dateText={customPost.date}
-                                      /> */}
-                                      <Link link={customPost.slug}>
-                                        <h6
-                                          dangerouslySetInnerHTML={
-                                            customPost.title
-                                          }
-                                        />
-                                      </Link>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </>
-                          ) : (
-                            <div className="spinner_parent_1">
-                              <h1>NO NEW POSTS FOUND</h1>
-                            </div>
-                          )}
-                        </>
-                      ) : (
-                        <div className="spinner_parent_1">
-                          <h1>FAILED TO FETCH POSTS</h1>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="topGuides_parent_1">
-                      {["", "", "", ""].map((m, n) => (
-                        <div
-                          className="placeholder_child_8_parent_parent"
-                          key={n}
-                        >
-                          <Placeholder animation="glow" className="">
-                            <Placeholder className="placeholder_child_8_1" />
-                          </Placeholder>
-                          <Placeholder animation="glow" className="">
-                            <Placeholder
-                              xs={10}
-                              className="placeholder_child_8_2"
-                            />
-                            <Placeholder
-                              xs={5}
-                              className="placeholder_child_8_2"
-                            />
-                          </Placeholder>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+              <SidebarListingWithImages
+                title={"Top Profiles"}
+                link={"/news-and-trends/profiles/"}
+                postsSet={postsSet1}
+                WP_SiteUrl={WP_SiteUrl}
+                postsSet_categoryTitle={"PROFILES"}
+                postsSet_categoryID={postsSet1_categoryID}
+              />
+
               <div className="ad_rectangle_1">
                 <p>[AD]</p>
               </div>

@@ -64,9 +64,11 @@ font-family: 'Noto Sans', sans-serif;
   --post_block_2_featureImg_1_height: calc(var(--fullImageHeight) / 2.05);
   --post_block_2_postImg_2_width: 239.728px;
   --post_block_2_postImg_2_height: 151px;
+  --post_block_3_postImg_1_height: 172.9px;
   --post_block_3_postImg_1_width: 274.583px;
   --post_block_3_postImg_2_width: 90px;
   --post_block_3_postImg_2_height: 56.618px;
+  --profiles_post_block_postImg_2_height: 300px;
   --recipes_youll_love_img_1_width: 180px;
   --videos_previewImg_1_width: 301px;
   --videos_previewImg_1_height: 184px;
@@ -2662,15 +2664,16 @@ COOK BOOKS - PLACEHOLDER
 .cook_books_placeholder_parent_2 > span {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   color: black;
   align-items: center;
-  flex-direction: row;
   justify-content: space-between;
 }
 
 .cook_books_placeholder_parent_2 > span > span {
-  width: 212px;
   height: 350px;
+  margin-bottom: 20px;
+  width: var(--cookbook_carousel_image_2_width);
 }
 
 /*
@@ -2720,11 +2723,19 @@ COOK BOOKS - CAROUSEL
   transform: translateY(5px);
 }
 
-.cookbook_carousel_item_parent_2,
 .cookbook_carousel_item_parent_1 {
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cookbook_carousel_item_parent_2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
   align-items: flex-start;
   justify-content: space-between;
 }
@@ -2757,8 +2768,9 @@ COOK BOOKS - CAROUSEL
 }
 
 .cookbook_carousel_item_container_2 {
-  width: var(--cookbook_carousel_image_2_width);
+  margin-bottom: 20px;
   background-color: white;
+  width: var(--cookbook_carousel_image_2_width);
 }
 
 .cookbook_carousel_image_div_2,
@@ -3121,7 +3133,7 @@ COOK BOOKS - CAROUSEL
 }
 
 .profiles_post_block_postImg_2 {
-  height: var(----post_block_3_postImg_2_height);
+  height: var(--profiles_post_block_postImg_2_height);
 }
 
 .profiles_post_block_text_parent_2 {

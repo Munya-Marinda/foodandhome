@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "frontity";
 import Link from "@frontity/components/link";
-import { FaGreaterThan } from "react-icons/fa";
 import ArticleIcons from "../components/ArticleIcons";
-import CategoryDateText from "../components/CategoryDateText";
-import FullWidthPost from "../components/FullWidthPost";
 import { CustomWPRestServicePostObject, filterAndSortPosts } from "../js/main";
 import { Placeholder } from "react-bootstrap";
 import CookbooksCarousel from "../components/CookbooksCarousel";
-import FullScreenCTA from "../components/FullScreenCTA";
-import Top20SAWinesCarousel from "../components/Top20SAWinesCarousel";
 import RecipesCarousel from "../components/RecipesCarousel";
-import CategoryDateText_2 from "../components/CategoryDateText_2";
 import LetsCook from "../components/ArticleViews/LetsCook";
 import ThreeByThreeArticleView from "../components/ArticleViews/ThreeByThreeArticleView";
 import DaddysDealsIFrame from "../components/DaddysDealsIFrame";
@@ -23,8 +17,14 @@ import SidebarListingWithImages from "../components/sidebars/SidebarListingWithI
 const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
   const [adPositions, setAdPositions] = useState(false);
   //
-  const postsSet1_categoryID = 25282;
+  const postsSet1_categoryID = 51;
   const [postsSet1, setPostsSet1] = useState(null);
+  //
+  const postsSet2_categoryID = 2592;
+  const [postsSet2, setPostsSet2] = useState(null);
+  //
+  const postsSet3_categoryID = 59;
+  const [postsSet3, setPostsSet3] = useState(null);
   //
   const cookbookPosts1_categoryID = 55;
   const [cookbookPosts1, setCookbookPosts1] = useState(null);
@@ -53,23 +53,59 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
           return;
         }
         const postsData = await response.json();
-        setPostsSet1([
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-          postsData[0],
-        ]);
+        setPostsSet1(postsData);
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPostsSet1(false);
       }
     };
     fetch1Posts();
+    //
+    //
+    //
+    const fetch2Posts = async () => {
+      try {
+        const response = await fetch(
+          WP_SiteUrl +
+            "/wp-json/wp/v2/posts?categories=" +
+            postsSet2_categoryID +
+            "&per_page=100&orderby=date&order=desc&_embed"
+        );
+        if (!response.ok) {
+          setPostsSet2(false);
+          return;
+        }
+        const postsData = await response.json();
+        setPostsSet2(postsData);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+        setPostsSet2(false);
+      }
+    };
+    fetch2Posts();
+    //
+    //
+    //
+    const fetch3Posts = async () => {
+      try {
+        const response = await fetch(
+          WP_SiteUrl +
+            "/wp-json/wp/v2/posts?categories=" +
+            postsSet3_categoryID +
+            "&per_page=100&orderby=date&order=desc&_embed"
+        );
+        if (!response.ok) {
+          setPostsSet3(false);
+          return;
+        }
+        const postsData = await response.json();
+        setPostsSet3(postsData);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+        setPostsSet3(false);
+      }
+    };
+    fetch3Posts();
     //
     //
 
@@ -387,13 +423,13 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
               <div className="post_block_3_posts_container_2">
                 <LetsCook
                   serves_count={"4"}
-                  postsSet1={postsSet1}
+                  postsSet1={postsSet2}
                   WP_SiteUrl={WP_SiteUrl}
                   total_time={"40 minutes"}
                   categoryHeader={"Recipes"}
                   backgroundColor={"green"}
                   categoryHeaderLink={"/recipes/"}
-                  postsSet1_categoryID={postsSet1_categoryID}
+                  postsSet1_categoryID={postsSet2_categoryID}
                   header={"Carrot falafel with lemon yogurt"}
                   blurb={"Tasty and simple homemade falafels."}
                 />
@@ -406,9 +442,9 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
                 <ThreeByThreeArticleView
                   slice_end={4}
                   slice_start={1}
-                  postsSet1={postsSet1}
+                  postsSet1={postsSet2}
                   WP_SiteUrl={WP_SiteUrl}
-                  postsSet1_categoryID={postsSet1_categoryID}
+                  postsSet1_categoryID={postsSet2_categoryID}
                 />
 
                 <Link
@@ -437,13 +473,13 @@ const HomePage = ({ state, headerStickyContainerHeight, headerIsSticky }) => {
 
                 <LetsCook
                   serves_count={"4"}
-                  postsSet1={postsSet1}
+                  postsSet1={postsSet3}
                   WP_SiteUrl={WP_SiteUrl}
                   total_time={"40 minutes"}
                   categoryHeader={"How To"}
                   backgroundColor={"gray"}
                   categoryHeaderLink={"/how-to/"}
-                  postsSet1_categoryID={postsSet1_categoryID}
+                  postsSet1_categoryID={postsSet3_categoryID}
                   header={"Carrot falafel with lemon yogurt"}
                   blurb={"Tasty and simple homemade falafels."}
                 />
